@@ -17,7 +17,7 @@ Object-oriented programming languages allow programmers to write sections of re-
 
 ## High-Level Programming Languages
 
-[IMAGE]
+<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_1.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_1.png?raw=true" /></a></p>
 
 High-level programming languages refer to programming languages that resemble human languages. High-level languages are abstractions of low-level languages like binary (a machine language). Assembly languages are an intermediary. A complier translates the high-level language into an assembly language, and an assembler translates the assembly language into the machine language.
 
@@ -36,7 +36,7 @@ print("Hello World!")
 ```
 Type the code listed above.
 
-[IMAGE]
+<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true" /></a></p>
 
 Notice that as with our other HTML and XML projects, Geany has highlighted the syntax for us to make debugging easier.
 
@@ -60,8 +60,7 @@ Let’s modify the code as follows:
 hello="Hello World"
 print(hello)
 ```
-
-[IMAGE]
+<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true" /></a></p>
 
 Notice that Geany is keeping track of the variable that you created on the left side of the screen.
 
@@ -173,7 +172,7 @@ print("Welcome to " + course_name.title() + " CSC:" + course_number)
 ```
 When you execute the program, you will receive an error.
 
-[IMAGE 8]
+<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_8.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_8.png?raw=true" /></a></p>
 
 The type error is telling us that we cannot use these two different variable types in the same function. 
 
@@ -437,14 +436,16 @@ The loop command steps through the list one value at a time. The loop continues 
 
 In this case, for each item in the list called “characters” the program prints the value of each “character” in the list concatenated with the string “ Stark”. This produces the output:
 
-`Arya Stark
+```
+Arya Stark
 Benjen Stark
 Bran Stark
 Catelyn Stark
 Eddard Stark
 Rickon Stark
 Robb Stark
-Sansa Stark`
+Sansa Stark
+```
 
 Now let's look at a different loop.
 
