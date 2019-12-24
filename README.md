@@ -20,6 +20,7 @@ Object-oriented programming languages allow programmers to write sections of re-
 [IMAGE]
 
 High-level programming languages refer to programming languages that resemble human languages. High-level languages are abstractions of low-level languages like binary (a machine language). Assembly languages are an intermediary. A complier translates the high-level language into an assembly language, and an assembler translates the assembly language into the machine language.
+
 Remember, we used the machine language (aka binary code) in a previous lab.
 
 We are going to look a just a few basics that are common to all programming languages. While syntax will differ slightly from language to language, these basic functions can be performed in all languages.
@@ -35,9 +36,9 @@ print("Hello World!")
 ```
 Type the code listed above.
 
-Notice that as with our other HTML and XML projects, Geany has highlighted the syntax for us to make debugging easier.
-
 [IMAGE]
+
+Notice that as with our other HTML and XML projects, Geany has highlighted the syntax for us to make debugging easier.
 
 Now we need to run the file – either press F5 or select Build > Execute from the menu. A terminal window should open with the phrase “Hello World!”
 
@@ -49,7 +50,7 @@ In this example, the Python interpreter recognizes the word print as a Python fu
 
 The brackets () contain the information to be printed. In this case you have entered a string “Hello World.” 
 
-<blockquote>A string is any series of characters. Strings are identified by the “ ” or alternatively by ‘ ’.</blockquote>
+<blockquote>A string is any series of characters. Strings are identified by the <code>“ ”</code> or alternatively by <code>‘ ’</code>.</blockquote>
 
 Let’s change this program a bit. We are going to assign our first variable. A variable is a placeholder for a piece of information. You can think of it as a basket or container. 
 
@@ -82,22 +83,20 @@ Python has a few built-in functions for working with strings. Create a new file 
 name = "katie walden"
 ```
 
-Next, we’ll use the print function with the method title. Python functions and methods always end with a (). Methods define an additional action that can be applied to the data.
+Next, we’ll use the `print` function with the method `title`. Python functions and methods always end with a `()`. Methods define an additional action that can be applied to the data.
 
 ```Python
 name = "katie walden"
 print(name.title())
 ```
 
-[IMAGE]
-
 Your program should output your data with a leading capital letter.
 
 We can also change the case using the upper method and lower method: `print(name.upper())` outputs your string with all capital letters, while `print(name.lower())` outputs your string in all lower case.
 
-`Katie Walden
-KATIE WALDEN
-katie walden`
+`Katie Walden`
+`KATIE WALDEN`
+`katie walden`
 
 Try adding two additional print functions calling the name variable with each of these methods.  
 
@@ -111,7 +110,7 @@ full_name = first_name + " " + last name
 
 Let’s modify our code a bit and create two new variables `first_name` for your first name and `last_name` for your last name. We can then combine these two string variables (called concatenation) in a third variable called `full_name`.
 
-If we want our first and last name to be separated by a space, we need to tell Python to add one in by including the “ “, otherwise, each string will be printed back-to-back.
+If we want our first and last name to be separated by a space, we need to tell Python to add one in by including the `“ “`, otherwise, each string will be printed back-to-back.
 
 ```Python
 first_name = "katie"
@@ -121,7 +120,7 @@ full_name = first_name + " " + last name
 print(full_name)
 ```
 
-We can then use the print function as we did before to output `full_name` to the screen.
+We can then use the `print` function as we did before to output `full_name` to the screen.
 
 ```Python
 first_name = "katie"
@@ -130,7 +129,7 @@ full_name = first_name + " " + last name
 
 print("Hello, " + full_name.title() + "!")
 ```
-We could combine strings and variables in the same print function to output a full sentence to the screen.
+We could combine strings and variables in the same `print` function to output a full sentence to the screen.
 
 ```Python
 first_name = "katie"
@@ -158,9 +157,9 @@ print(2*3)
 print(2/3)
 ```
 
-<blockquote>Q4: Why does print(2/3) return 0? How would you modify your code to return the decimal number? Why?</blockquote>
+<blockquote>Q4: Why does <code>print(2/3)</code> return 0? How would you modify your code to return the decimal number? Why?</blockquote>
 
-Hint: Try print(2.0/3.0) using the floating point integers (numbers with decimal points).
+Hint: Try `print(2.0/3.0)` using the floating point integers (numbers with decimal points).
 
 # Task 4: Combining Variable Types
 
@@ -307,9 +306,9 @@ print(fruit)
 
 <blockquote><code>remove</code> only removes the first instance of the value in the list. So, if in the previous example orange appeared on the list a second time, only the first instance would be removed. To remove all instances, you would need to perform a loop (we’ll talk about this shortly).</blockquote>
 
-A few additional functions that can be useful when working with lists.
+## A few additional functions that can be useful when working with lists.
 
-## `Reverse`
+### `Reverse`
 
 To print in reverse order, use `reverse`.
 
@@ -319,7 +318,7 @@ fruit.reverse()
 print(fruit)
 ```
 
-## `Sort`
+### `Sort`
 
 To alphabetize your list, use the `sort` method.
 
@@ -329,7 +328,7 @@ fruit.sort()
 print(fruit)
 ```
 
-## `Len`
+### `Len`
 
 To find the length of your list, use the `len` function.
 
@@ -339,7 +338,7 @@ length = len(fruit)
 print(length)
 ```
 
-<blockquote>Q7: What is an alternative way to write the print command to return the length of the list. *Hint* you’ll combine the last two lines of the example above.</blockquote>
+<blockquote>Q7: What is an alternative way to write the `print` command to return the length of the list. *Hint* you’ll combine the last two lines of the example above.</blockquote>
 
 # Task 6: Lists of Numbers
 
@@ -396,7 +395,7 @@ for bit in range(1,9):
 print(patterns)
 ```
 
-<blockquote>Q10: Either include a snippet of your version of this program in your notebook and explain your code, AND/OR explain how my version of this program works.</blockquote>
+<blockquote>Q10: Either include a snippet of your version of this program in your notebook and explain your code, AND/OR explain how the example version of this program works.</blockquote>
 
 Python also allows us to return the minimum value, maximum value, and sum of the numbers in a list.
 
@@ -411,9 +410,9 @@ print(sum(patterns))
 ```
 
 This program outputs
-`2
-256
-510`
+`2`
+`256`
+`510`
 
 # Task 7: Working With Loops
 
@@ -504,9 +503,9 @@ for name in names:
 ```
 
 This program returns the output
-`Department of Computer Science
-Computer Science Department
-CS`
+`Department of Computer Science`
+`Computer Science Department`
+`CS`
 
 This program without the comments:
 
@@ -730,17 +729,18 @@ for tag, data in book.items():
   print("value: " + data)
 ```
 
-<blockquote>Q17: Try the following two programs.
+<blockquote>Q17: Try the following two programs. What did the programs output? Explain how each program works in your own words.</blockquote>
   
-  <code>for tag in work.keys():
-    print(tag)</code>
-  
-  and 
-  
-  <code>for data in work.values(): 
-    print(data)</code>
-  
-What did the programs output? Explain how each program works in your own words.</blockquote>
+```Python
+for tag in book.keys():
+  print(tag)
+```
+and 
+
+```Python
+for data in book.values(): 
+    print(data)
+```  
   
 Like with lists, we can start with an empty dictionary and add values.
   
@@ -818,16 +818,15 @@ But, we’ve described three different objects in our collection using lists. Wh
 One way to accomplish this goal with Python would be to generate two different dictionaries.
 
 ```Python
-
-book_0={
-book_1={
+book_0={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
+book_1={'title': 'Learning XML', 'author': 'Erik Ray', 'date': '2003'}
 ```
 
 We could then use a list to generate a list of the metadata for each of the works.
 
 ```Python
-book_0={
-book_1={
+book_0={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
+book_1={'title': 'Learning XML', 'author': 'Erik Ray', 'date': '2003'}
 
 books = [book_0, book_1]
 print(books)
@@ -838,21 +837,24 @@ While the this program outputs all of the metadata, one of the advantages of our
 Another solution would be to embed a list in a dictionary.
 
 ```Python
-
 books = {
-}
+  'title': ['CSS: The Definitive Guide', 'Learning XML']
+  'date': ['2007', '2003']
+  'author': ['Eric Meyer', 'Erik Ray']
+  }
 
 print ("My books include books by " + books['author'] + ":")
 for title in books['title']:
-print("\t" + title)
+  print("\t" + title)
 ```
 
 This program outputs:
 
-`My books include books by Eric Meyer and Erik Ray:
+```
+My books include books by Eric Meyer and Erik Ray:
   CSS: The Definitive Guide
   Learning XML
-`
+```
 
 <blockquote>Note: The <code>\t</code> is a short cut for a TAB so that my list was indented. <code>\n</code> will generate a new line in your output.</blockquote>
 
@@ -860,8 +862,15 @@ While this dictionary contains all of the data from my XML, there are some limit
 
 ```Python
 books = {
+  'CSS: The Definitive Guide': {
+    'date': '2007', 
+    'author': 'Eric Meyer'
+    },
+  'Learning XML': {
+    'date': '2003',
+    'author': 'Erik Ray'
+    }
 }
-
 ```
 
 This example includes a dictionary called `books` that holds two other dictionaries. It uses the title as the key for each of the dictionaries for the works. The value of each of these keys is a dictionary containing “title”, “date”, and "author.”
@@ -889,10 +898,10 @@ This outputs:
 ```
 My Books:
   CSS: The Definitive Guide (2007)
-  Learning XML (2002)
+  Learning XML (2003)
 ```
 
-<blockquote>Q20: Write a similar dictionary for your XML file and generate some output. Copy and paste your code and your result into your notebook. Explain how your program works in your own words.</boockquote>
+<blockquote>Q20: Write a similar dictionary for your XML file and generate some output. Copy and paste your code and your result into your notebook. Explain how your program works in your own words.</blockquote>
 
 # Task 12: Parsing XML With Python
 
@@ -978,19 +987,14 @@ books
 
 book
 
-title
-date
-author
+title CSS: The Definitive Guide
+date 2007
+author Eric Meyer
 book
 
-title
-date
-author
-book
-
-title
-date
-author
+title Learning XML
+date 2003
+author Erik Ray
 ```
 
 Now let’s get some data from the file. This next program creates a loop that returns all the titles in the file. 
@@ -1011,7 +1015,8 @@ for book in root.findall('book'):
 
 This program outputs:
 ```
-TITLES
+CSS: The Definitive Guide
+Learning XML
 ```
 But what if we want to pull the title and date? We can modify the code to also pull the information from the `<date>` tag.
 
@@ -1070,15 +1075,15 @@ Q16: Create a dictionary for one of the items in your collection using the tags 
 Q17: Try the following two programs. What did the programs output? Explain how each program works in your own words.
   
 ```Python
-for tag in work.keys():
-    print(tag)
-```  
+for tag in book.keys():
+  print(tag)
+```
 and 
 
 ```Python
-for data in work.values(): 
+for data in book.values(): 
     print(data)
-```
+```  
   
 Q19: Explain the `if` functions in your own words. What does this program output? Why?
 
