@@ -1,5 +1,10 @@
 # Introduction to Python
 
+This tutorial was written by [Lindsay K. Mattock](http://lindsaymattock.net) and adapted by [Katherine Walden](https://github.com/kwaldenphd). 
+
+<a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a>
+This tutorial is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
 ## Lab Objectives
 
 By the end of this project you will be able to:
@@ -10,6 +15,10 @@ By the end of this project you will be able to:
 -	Use Python to parse XML using the ElementTree Module
 
 Python is an object-oriented programming language. It’s comparable to a number of other programming languages, such as Perl, Ruby, or Java. Python is a high- level programming language.
+
+## Acknowledgements
+
+This lab is based on the "Project 5: Python" project materials developed by [Lindsay K. Mattock](http://lindsaymattock.net/) for the the [SLIS 5020 Computing Foundations course](http://lindsaymattock.net/computingfoundations.html). 
 
 ## Object-Oriented Programming
 
