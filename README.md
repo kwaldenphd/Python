@@ -34,6 +34,26 @@ Remember, we used the machine language (aka binary code) in a previous lab.
 
 We are going to look a just a few basics that are common to all programming languages. While syntax will differ slightly from language to language, these basic functions can be performed in all languages.
 
+# Table of Contents
+- [Task 1: Hello World](#task-1-hello-world)
+- [Task 2: Working with Strings and Variables](#task-2-working-with-strings-and-variables)
+- [Task 3: Working with Numbers](#task-3-working-with-numbers)
+- [Task 4: Combining Variable Types](#task-4-combining-variable-types)
+- [Task 5: Creating Lists](#task-5-creating-lists)
+  * [A few additional functions that can be useful when working with lists](#a-few-additional-functions-that-can-be-useful-when-working-with-lists)
+    * [Reverse](#reverse)
+    * [Sort](#sort)
+    * [Len](#len)
+- [Task 6: Lists of Numbers](#task-6-lists-of-numbers)
+- [Task 7: Working With Loops](#task-7-working-with-loops)
+- [Task 8: If...Statements](#task-8-ifstatements)
+- [Task 9: Gathering Input](#task-9-gathering-input)
+- [Task 10: Describing Data With Dictionaries](#task-10-describing-data-with-dictionaries)
+- [If Time Allows](#if-time-allows)
+  * [Task 11: Nesting Dictionaries](#task-11-nesting-dictionaries)
+  * [Task 12: Parsing XML With Python](#task-12-parsing-xml-with-python)
+- [Lab Notebook Questions](#lab-questions)
+
 # Task 1: Hello World
 
 1. Your Pi comes installed with a Python programming environment, but we’ll stick with Geany for this lab. We'll write our first Python program using a variation on the now familiar “Hello World!”
