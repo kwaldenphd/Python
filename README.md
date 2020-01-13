@@ -49,9 +49,6 @@ We are going to look a just a few basics that are common to all programming lang
 - [Task 8: If...Statements](#task-8-ifstatements)
 - [Task 9: Gathering Input](#task-9-gathering-input)
 - [Task 10: Describing Data With Dictionaries](#task-10-describing-data-with-dictionaries)
-- [If Time Allows](#if-time-allows)
-  * [Task 11: Nesting Dictionaries](#task-11-nesting-dictionaries)
-  * [Task 12: Parsing XML With Python](#task-12-parsing-xml-with-python)
 - [Lab Notebook Questions](#lab-questions)
 
 # Task 1: Hello World
@@ -66,7 +63,7 @@ print("Hello World!")
 
 <p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true" /></a></p>
 
-4. Notice that as with our other HTML and XML projects, Geany has highlighted the syntax for us to make debugging easier.
+4. Notice that as with our other HTML project, Geany has highlighted the syntax for us to make debugging easier.
 
 5. Now we need to run the file – either press F5 or select Build > Execute from the menu. A terminal window should open with the phrase “Hello World!”
 
@@ -96,7 +93,7 @@ print(hello)
 14. Python has a few rules for variables:
   *	Variable names can only include letter, numbers, or underscores, but cannot start with a number.
   *	Spaces are not permitted.
-  *	The names of python methods and functions are reserved, meaning that they cannot be used as variable names. So, print cannot be used as a variable name.
+  *	The names of Python methods and functions are reserved, meaning that they cannot be used as variable names. So, print cannot be used as a variable name.
   * As a rule, variable names should be short and descriptive.
 
 <blockquote>Q1: In your own words, explain the difference between the print(hello) command we just used and print(“hello”).</blockquote>
@@ -166,7 +163,7 @@ print(sentence)
 
 # Task 3: Working With Numbers
 
-25. Python works with integers (whole numbers) and floats (any number with a decimal point). Python uses the basic mathematic symbols to perform functions: + (add), - (subtract), * (multiply), / (divide). 
+25. Python works with integers (whole numbers) and floats (any number with a decimal point). Python uses the basic mathematic symbols to perform functions: `+` (add), `-` (subtract), `*` (multiply), `/` (divide). 
 
 26. Try this program:
 ```Python
@@ -370,15 +367,15 @@ print(numbers)
 
 68. Can you write a program that creates a list that represents all of the different patterns we could represent from 1 bit to 8 bits, like our chart from binary math lab?
 
-1 bit - 2 patterns
-2 bits - 4
-3 bits - 8
-4 bits - 16
-5 bits - 32
-6 bits - 64
-7 bits - 128
-8 bits - 256
-n bits -2<sup>n</sup> patterns
+- 1 bit - 2 patterns
+- 2 bits - 4
+- 3 bits - 8
+- 4 bits - 16
+- 5 bits - 32
+- 6 bits - 64
+- 7 bits - 128
+- 8 bits - 256
+- n bits -2<sup>n</sup> patterns
 
 69. Try to write a program that outputs the list: `[2, 4, 8, 16, 32, 64, 128, 256]`.
 
@@ -424,13 +421,15 @@ for character in characters:
   print(character.title() + "Stark")
 ```
 
-<blockquote>Note: I used the # to create a comment and describe the purpose of this python program. Comments are written for the human users of the program and will not be processed as code by the computer. Every programming language uses a different set of symbols to designate comments in the code. It’s good practice to include comments in your code so that you code can be modified and reused.</blockquote>
+<blockquote>Note: I used the # to create a comment and describe the purpose of this Python program. Comments are written for the human users of the program and will not be processed as code by the computer. Every programming language uses a different set of symbols to designate comments in the code. It’s good practice to include comments in your code so that you code can be modified and reused.</blockquote>
 
 <blockquote>Note the use of the plural for the name of the list and the singular for the individual item is not required. We are just declaring variables here. I could have used anything to name the individual items (e.g. for person in characters). All you are doing with this step is setting a new variable for the individual item. It is standard convention to use the plural and singular terms so that the person reading the code can interpret what it is doing.</blockquote>
 
 75. The loop command steps through the list one value at a time. The loop continues until it reaches the end of the list. 
 
-76. In this case, for each item in the list called “characters” the program prints the value of each “character” in the list concatenated with the string “ Stark”. This produces the output:
+76. In this case, for each item in the list called `“characters”` the program prints the value of each `“character”` in the list concatenated with the string `" Stark”`. 
+
+This produces the output:
 ```
 Arya Stark
 Benjen Stark
@@ -637,7 +636,9 @@ print("You guessed it!")
 
 90. We’ll return to inputs, loops, and conditional statements in a minute. Let’s look at another way of storing information with Python. 
 
-91. In the last lab, we created metadata using XML to describe the information about each of the items we selected for the HTML project. We can also store this metadata in Python using a Dictionary.
+91. I've created metadata to describe the information about each of the items we selected for the HTML project. We can also store this metadata in Python using a Dictionary.
+
+Example of the XML (eXtensible Markup Language) file with the item metadata:
 ```XML
 <books>
   <book>
@@ -681,7 +682,7 @@ book={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '200
 
 99. The information is added in a series of pairs called key-value pairs. Each key is the equivalent of the XML tag and each value equal to the value we associated with the tag.
 
-<blockquote>Q16: Create a dictionary for one of the items in your collection using the tags and information from your XML file. Write a print command and explain the output of your program in your own words.</blockquote>
+<blockquote>Q16: Create a dictionary for one of the items in your collection using the template outlined in this tutorial. Write a print command and explain the output of your program in your own words.</blockquote>
 
 100. Just like with the list, we can also create a loop to return each of the values in my new dictionary.
 ```Python
