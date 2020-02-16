@@ -334,7 +334,7 @@ length = len(fruit)
 print(length)
 ```
 
-<blockquote>Q7: What is an alternative way to write the `print` command to return the length of the list. *Hint* you’ll combine the last two lines of the example above.</blockquote>
+<blockquote>Q7: What is an alternative way to write the print command to return the length of the list. *Hint* you’ll combine the last two lines of the example above.</blockquote>
 
 # Task 6: Lists of Numbers
 
