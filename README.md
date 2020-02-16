@@ -12,7 +12,6 @@ By the end of this project you will be able to:
 -	Use Geany to write and execute Python programs
 -	Use Python methods and functions to work with strings and numbers
 -	Assign variables, concatenate strings, create lists, and define dictionaries
--	Use Python to parse XML using the ElementTree Module
 
 Python is an object-oriented programming language. It’s comparable to a number of other programming languages, such as Perl, Ruby, or Java. Python is a high- level programming language.
 
@@ -198,7 +197,7 @@ print("Welcome to " + course_name.title() + " CSC:" + str(course_number())
 
 # Task 5: Creating Lists
 
-32. In our last project we stored information in XML files. Python allows us to store information in a few different ways. 
+32. Python allows us to store information in a few different ways. 
 
 33. Let’s start with lists. Lists are an ordered collection of items. Lists can be numbers or strings. They are declared with a variable name, but the information is contained within `[ ]` and the individual items are separated by a comma. 
 
@@ -409,7 +408,7 @@ print(sum(patterns))
 
 # Task 7: Working With Loops
 
-73. Loops are one of the most common computer functions (we used a loop last week in our XML transformation). 
+73. Loops are one of the most common computer functions. 
 
 74. In a loop, the computer will continue to follow the instructions, until it can’t perform that function any longer. We’ll use a list to write our first loop.
 ```Python
