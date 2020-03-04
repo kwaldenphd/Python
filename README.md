@@ -120,7 +120,7 @@ print(name.title())
 
 19. Try adding two additional print functions calling the name variable with each of these methods.  
 
-<blockquote>Q2: Describe the syntax three commands that we just used in your own words. Define the function and method for each example.</blockquote>
+<blockquote>Q2: Describe the syntax of the three commands that we just used in your own words. Define the function and method for each example.</blockquote>
 
 ```Python
 first_name = "katie"
