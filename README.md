@@ -750,7 +750,7 @@ print(book)
 ```Python
 book={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
   
-del book['title']
+del book['author']
  
 print(book)
 ```
