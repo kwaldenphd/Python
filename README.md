@@ -194,6 +194,7 @@ print("Welcome to " + course_name.title() + " CSC:" + course_number)
 ```Python
 print("Welcome to " + course_name.title() + " CSC:" + str(course_number())
 ```
+<blockquote>Q5: Explain concatenation in your own words. Why must we convert numbers to strings in the program above? Refer to this example and the previous example.</blockquote>
 
 # Task 5: Creating Lists
 
