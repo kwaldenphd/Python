@@ -1,523 +1,607 @@
-# Introduction to Python
-
-This tutorial was written by [Lindsay K. Mattock](http://lindsaymattock.net) and adapted by [Katherine Walden](https://github.com/kwaldenphd). 
+# Getting Started With Python
 
 <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a>
 This tutorial is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
-## Lab Objectives
+## Lab Overview
 
-By the end of this project you will be able to:
--	Describe the differences between a high-level programming language and machine language
--	Use Geany to write and execute Python programs
--	Use Python methods and functions to work with strings and numbers
--	Assign variables, concatenate strings, create lists, and define dictionaries
-
-Python is an object-oriented programming language. It’s comparable to a number of other programming languages, such as Perl, Ruby, or Java. Python is a high- level programming language.
+This lab provides an overview of foundational programming syntax in Python, specifically data types/structures, common methods/functions, loops, and operators.
 
 ## Acknowledgements
 
-This lab is based on the "Project 5: Python" project materials developed by [Lindsay K. Mattock](http://lindsaymattock.net/) for the the [SLIS 5020 Computing Foundations course](http://lindsaymattock.net/computingfoundations.html). 
-
-## Object-Oriented Programming
-
-Object-oriented programming languages allow programmers to write sections of re-usable code, including object definitions and function definitions. Objects describe some object or concept from the real-world in code form. Functions then define the way that objects interact or how they function.
-
-## High-Level Programming Languages
-
-<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_1.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_1.png?raw=true" /></a></p>
-
-High-level programming languages refer to programming languages that resemble human languages. High-level languages are abstractions of low-level languages like binary (a machine language). Assembly languages are an intermediary. A complier translates the high-level language into an assembly language, and an assembler translates the assembly language into the machine language.
-
-Remember, we used the machine language (aka binary code) in a previous lab.
-
-We are going to look a just a few basics that are common to all programming languages. While syntax will differ slightly from language to language, these basic functions can be performed in all languages.
+[Click here](https://github.com/kwaldenphd/Python/blob/master/acknowledgements.md) for a full list of acknowledgements for this lab.
 
 # Table of Contents
-- [Task 1: Hello World](#task-1-hello-world)
-- [Task 2: Working with Strings and Variables](#task-2-working-with-strings-and-variables)
-- [Task 3: Working with Numbers](#task-3-working-with-numbers)
-- [Task 4: Combining Variable Types](#task-4-combining-variable-types)
-- [Task 5: Creating Lists](#task-5-creating-lists)
-  * [A few additional functions that can be useful when working with lists](#a-few-additional-functions-that-can-be-useful-when-working-with-lists)
-    * [Reverse](#reverse)
-    * [Sort](#sort)
-    * [Len](#len)
-- [Task 6: Lists of Numbers](#task-6-lists-of-numbers)
-- [Task 7: Working With Loops](#task-7-working-with-loops)
-- [Task 8: If...Statements](#task-8-ifstatements)
-- [Task 9: Gathering Input](#task-9-gathering-input)
-- [Task 10: Describing Data With Dictionaries](#task-10-describing-data-with-dictionaries)
-- [Lab Notebook Questions](#lab-questions)
 
-# Task 1: Hello World
+- [`print` statements](#print-statements)
+- [Variables](#variables)
+- [Data Types](#data-types)
+  * [Comments](#comments)
+  * [Numbers](#numbers)
+  * [Strings](#strings)
+- [Concatenation](#concatenation)
+- [Operators](#operators)
+  * [Arithmetic Operators](#arithmetic-operators)
+  * [Comparison Operators](#comparison-operators)
+  * [Logical Operators](#logical-operators)
+  * [Additional Resources](#additional-resources)
+- [Lists](#lists)
+- [Dictionaries](#dictionaries)
+- [`if, else, elif` statements](#if-else-elif-statements)
+- [Loops](#loops)
+  * [`for` loops](#for-loops)
+  * [`while` loops](#while-loops)
+- [Putting It All Together](#putting-it-all-together)
+- [Lab Notebook Questions](#lab-notebook-questions)
 
-1. Your Pi comes installed with a Python programming environment, but we’ll stick with Geany for this lab. We'll write our first Python program using a variation on the now familiar “Hello World!”
+[Link to lab procedure as a Jupyter Notebook](https://colab.research.google.com/drive/1QO0I_SYrCF70R6XzHDerOhzHQn4JUoqD?usp=sharing)
 
-2. Open a new file in Geany and save it as Hello_World.py. The .py extension on the file name tells Geany that we are writing Python (rather than .html or .xml).
-```Python
-print("Hello World!")
+# Lab Notebook Template
+
+Lab notebook template:
+- [Jupyter Notebook](https://colab.research.google.com/drive/14Zpi8TabYz-AzqbJZkeK14lhD1i_spze?usp=sharing)
+
+# `print` statements
+
+For each of these examples, copy/paste or retype the code to run each mini program (and learn more about Python's functionality and documentation). Experiment, adapt, or modify these samples as you work through the lab procedure.
+
+1. Your first program will contain a single Python statement. Enter the following statement into a code cell.
+
+<blockquote>Watch out for quotation marks!</blockquote>
+
+```python
+print ("Welcome to the wild world of computer programming!")
 ```
-3. Type the code listed above.
 
-<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true" /></a></p>
+2. Run the code cell to see the `print()` statement output.
 
-4. Notice that as with our other HTML project, Geany has highlighted the syntax for us to make debugging easier.
+3. The `print()` function will output the value passed to it, in this case a string of characters (letters).
 
-5. Now we need to run the file – either press F5 or select Build > Execute from the menu. A terminal window should open with the phrase “Hello World!”
+4. You can modify the characters or symbols in the quotation marks to print other values.
 
-6. You have just successfully written your first Python program. What just happened? 
+# Variables
 
-7. When you select Execute from the menu, Geany runs the file through the Python interpreter, this is another program that reads though the Python code that you just wrote and determines what each piece of code means and then executes the code (or runs it). 
+5. Next, we're going to assign our first variable.
 
-8. In this example, the Python interpreter recognizes the word print as a Python function. This function allows you to “print” to the screen or send output to the computer screen. 
+6. In Python, a variable is a placeholder for a piece of information. 
 
-9. The brackets () contain the information to be printed. In this case you have entered a string “Hello World.” 
-
-<blockquote>A string is any series of characters. Strings are identified by the <code>“ ”</code> or alternatively by <code>‘ ’</code>.</blockquote>
-
-10. Let’s change this program a bit. We are going to assign our first variable. A variable is a placeholder for a piece of information. You can think of it as a basket or container. 
-
-11. Let’s modify the code as follows:
 ```Python
-hello="Hello World"
+# assign "hello world" message to hello variable
+hello = "Hello World"
+
+# print hello variable
 print(hello)
 ```
-<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_3.jpg?raw=true" /></a></p>
 
-12. Notice that Geany is keeping track of the variable that you created on the left side of the screen.
+7. Run this program to see the `print()` statement output.
 
-13. When you execute the command you will see the same results as the first iteration. Variables are helpful when you need to use the same information multiple times in the same program. 
+8. In this example, the `"Hello World"` string of characters is assigned to a variable named `hello`.
 
-14. Python has a few rules for variables:
-  *	Variable names can only include letter, numbers, or underscores, but cannot start with a number.
-  *	Spaces are not permitted.
-  *	The names of Python methods and functions are reserved, meaning that they cannot be used as variable names. So, print cannot be used as a variable name.
-  * As a rule, variable names should be short and descriptive.
-
+9. You can choose variable names, as long as they meet a few conditions...
+  * Don't include spaces
+  * No special characters
+  * Don't begin with a number
+  * Aren't words that are also commands in Python (for example, `print` is an instruction and can't be a variable name)
+  
+10. For more on variables in Python: https://www.w3schools.com/python/python_variables.asp
+  
 <blockquote>Q1: In your own words, explain the difference between the print(hello) command we just used and print(“hello”).</blockquote>
 
-# Task 2: Working with Strings and Variables
+# Data Types
 
-15. Python has a few built-in functions for working with strings. Create a new file called name.py in Geany. Assign your first and last name to the variable name in all lower-case letters.
+11. Python includes a number of different data types, which can be stored as variables.
+
+12. We'll do more with variables later, but for now...
+
+## Comments
+
+13. We can add comments to our code to include information about what is happening in the program.
+
+14. In Python, lines that are comments begin with the `#` symbol.
+
+15. Going back to a previous `print()` statement example:
+
 ```Python
-name = "katie walden"
+# assign "hello world" message to hello variable
+hello = "Hello World"
+
+# print hello variable
+print(hello)
 ```
 
-16. Next, we’ll use the `print` function with the method `title`. Python functions and methods always end with a `()`. Methods define an additional action that can be applied to the data.
-```Python
-name = "katie walden"
-print(name.title())
+16. We see comments in action- lines that begin with `#` that are part of the program but not instructions or commands.
+
+17. To put that another way, comments are for human users, not the machine.
+
+18. For more on comments in Python: https://www.w3schools.com/python/python_comments.asp
+
+## Numbers
+
+19. An integer is a whole number that does not include any decimal (or fractional) values. A float data type includes decimal (or fractional) values.
+
+```python
+# printing an integer
+print(3)
+
+# storing an integer to a variable
+number = 3
+
+# show number variable type
+type(number)
+
+# print number variable
+print(number)
 ```
 
-17. Your program should output your data with a leading capital letter.
-
-18. We can also change the case using the upper method and lower method: `print(name.upper())` outputs your string with all capital letters, while `print(name.lower())` outputs your string in all lower case.
-
-`Katie Walden`
-`KATIE WALDEN`
-`katie walden`
-
-19. Try adding two additional print functions calling the name variable with each of these methods.  
-
-<blockquote>Q2: Describe the syntax of the three commands that we just used in your own words. Define the function and method for each example.</blockquote>
-
 ```Python
-first_name = "katie"
-last_name = "walden"
-full_name = first_name + " " + last name
-```
-20. Let’s modify our code a bit and create two new variables `first_name` for your first name and `last_name` for your last name. We can then combine these two string variables (called concatenation) in a third variable called `full_name`.
+# printing a decimal or float value
+print(3.5)
 
-21. If we want our first and last name to be separated by a space, we need to tell Python to add one in by including the `“ “`, otherwise, each string will be printed back-to-back.
-```Python
-first_name = "katie"
-last_name = "walden"
-full_name = first_name + " " + last name
+# store float value to a variable
+number = 3.5
 
-print(full_name)
+# show number variable type
+type(number)
+
+# print number variable
+print(number)
 ```
 
-22. We can then use the `print` function as we did before to output `full_name` to the screen.
-```Python
-first_name = "katie"
-last_name = "walden"
-full_name = first_name + " " + last name
+<blockquote>It may seem odd at first, but in Python, the "equals sign" here does not denote equality. Rather, it is an instruction telling Python to assign the value on its right into the variable on its left.</blockquote>
 
-print("Hello, " + full_name.title() + "!")
+20. For more on numbers in Python: https://www.w3schools.com/python/python_numbers.asp
+
+## Strings
+
+21. A string is a sequence of characters (letters, numbers, symbols, etc.)
+
+22. We can assign strings to a variable, or store them as a variable.
+
+```python
+# assign string to variable
+s = "Hello world!"
+
+# show variable type
+type(s)
+
+# print variable
+print(s)
 ```
-23. We could combine strings and variables in the same `print` function to output a full sentence to the screen.
+
+23. For more on strings in Python: https://www.w3schools.com/python/python_strings.asp
+
+# Concatenation
+
+24. In Python, we can add or join strings using a concept called concatenation.
+
+25. Specifically we can use the `+` symbol to connect two strings.
+
+26. Let's look at an example using first and last names:
+
 ```Python
-first_name = "katie"
-last_name = "walden"
-full_name = first_name + " " + last name
+# assign first name to variable
+firstName = "Katherine"
 
-sentence="Hello, " + full_name.title() + "!"
+# assign last name to variable
+lastName = "Walden"
 
-print(sentence)
+# use concatenation to create full name
+print(firstName + lastName)
 ```
-24. We could also assign this whole sentence to a variable and return the same output.
 
-<blockquote>Q3: Explain how each of these two programs (above) work in your own words.</blockquote>
+27. We notice the last program's output doesn't include a space between first and last name.
 
-# Task 3: Working With Numbers
+28. We can address this issue using...concatenation.
 
-25. Python works with integers (whole numbers) and floats (any number with a decimal point). Python uses the basic mathematic symbols to perform functions: `+` (add), `-` (subtract), `*` (multiply), `/` (divide). 
-
-26. Try this program:
 ```Python
+# assign first name to variable
+firstName = "Katherine"
+
+# assign last name to variable
+lastName = "Walden"
+
+# use concatenation to create full name with space between strings
+print(firstName + " " + lastName)
+```
+
+29. We could also use concatenation to create a new `fullName` variable.
+
+```Python
+# assign first name to variable
+firstName = "Katherine"
+
+# assign last name to variable
+lastName = "Walden"
+
+# use concatenation to create full name and assign to variable
+fullName = firstName + " " + lastName
+
+# pring fullName variable
+print(fullName)
+```
+
+30. For more on concatenation: https://www.w3schools.com/python/python_strings_concatenate.asp
+
+# Operators
+
+31. Python includes a few different types of operators that can be used with values and variables.
+
+<table>
+ <tr><td>Operator Type</td>
+ <td>Example</td>
+ <td>Description</td>
+ </tr>
+ <tr><td>Arithmetic operators</td>
+ <td><code>+, -, *, /</code></td>
+ <td>Used to perform arithmetic operations or calculations</td>
+ </tr>
+ <tr><td>Assignment operators</td>
+ <td><code>=</code></td>
+ <td>Used to assign values to variables</td>
+ </tr>
+ <tr><td>Comparison operators</td>
+ <td><code>==, !=, >, <</code></td>
+ <td>Used to compare two values</td>
+ </tr>
+ <tr><td>Logical operators</td>
+ <td><code>and, or, not</code></td>
+ <td>Used to combine conditional statements</td>
+ </tr>
+</table>
+
+## Arithmetic Operators
+
+32. A few standard operators we can use in Python to perform arithmetic operations.
+- `+` (plus, sum)
+- `-` (minus, subtraction)
+- `*` (times, multiplication)
+- `//` (divide, integer division)
+- `/` (divide, float division)
+- `%` (modulo operator, used to return/retrieve remainder after division)
+- `**` (exponent)
+
+33. Python follows the PEDMAS order of operations. When in doubt, use parenthesis!
+
+<blockquote>PEDMAS order of operations: parenthesis, exponents, multiplication, division, addition, subtraction</blockquote>
+
+```Python
+# a few examples of arithmetic operators in action
 print(2+3)
 print(2-3)
 print(2*3)
 print(2/3)
 ```
-<blockquote>Q4: Why does <code>print(2/3)</code> return 0? How would you modify your code to return the decimal number? Why?</blockquote>
 
-27. Hint: Try `print(2.0/3.0)` using the floating point integers (numbers with decimal points).
+## Comparison Operators
 
-# Task 4: Combining Variable Types
+34. Python's comparison operators will return a value of `TRUE` or `FALSE` based on whether the comparison is true or false.
 
-28. Let’s write a new program with an integer variable and a string variable.
-```Python
-course_name="The Digital Age"
-course_number = 105
+<table>
+ <tr><td>Operator</td>
+ <td>Name</td>
+ <td>Example</td>
+ </tr>
+ <tr><td><code>==</code></td>
+ <td>Equal</td>
+ <td><code>x == y</code></td>
+ </tr>
+ <tr><td><code>!=</code></td>
+ <td>Not equal</td>
+ <td><code>x != y</code></td>
+ </tr>
+ <tr><td><code>></code></td>
+ <td>Greater than</td>
+ <td><code>x > y</code</td>
+  </tr>
+  <tr><td><code><</code></td>
+   <td>Less than</td>
+   <td><code>x < y</code</td>
+  </tr>
+  <tr><td><code>>=</code></td>
+   <td>Greater than or equal to</td>
+   <td><code>x >= y</code></td>
+  </tr>
+  <tr><td><code><=</code></td>
+   <td>Less than or equal to</td>
+   <td><code>x <= y</code></td>
+  </tr>
+  </table>
+  
+35. These comparison operators compare two values and return `True` or `False`.
 
-print("Welcome to " + course_name.title() + " CSC:" + course_number)
+36. A few examples of comparison operators in Python:
+
+```python
+# assign integer to variable
+x=4
+
+# show operator type
+print(type(x == 4))
+
+# output true/false based on comparison statement
+print(x==4)
 ```
-29. When you execute the program, you will receive an error.
 
-<p align="center"><a href="https://github.com/kwaldenphd/Python/blob/master/images/Image_8.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/Python/blob/master/images/Image_8.png?raw=true" /></a></p>
+```python
+# in some cases, operators can be chained or combined
 
-30. The `type` error is telling us that we cannot use these two different variable types in the same function. 
+# will output true because comparison is true
+print(1 < 2 < 3)
 
-31. When we want numbers to be read as characters rather than numeric digits, we have to use the string method `str()` to convert the integer into a string of characters.
-```Python
-print("Welcome to " + course_name.title() + " CSC:" + str(course_number())
+# will output false because comparison is false
+print(10 < 2 < 3)
 ```
-<blockquote>Q5: Explain concatenation in your own words. Why must we convert numbers to strings in the program above? Refer to this example and the previous example.</blockquote>
 
-# Task 5: Creating Lists
+```python
+# assigning integer values to variables
+x = 3
+y = 18
+z = 10
 
-32. Python allows us to store information in a few different ways. 
+# comparing variables (will return true/false based on whether the comparison is true)
+print (x < y < z)
+```
 
-33. Let’s start with lists. Lists are an ordered collection of items. Lists can be numbers or strings. They are declared with a variable name, but the information is contained within `[ ]` and the individual items are separated by a comma. 
+37. For more on comparison operators in Python: https://www.w3schools.com/python/gloss_python_comparison_operators.asp
 
-34. Write a list of a few of your favorite things.
+## Logical Operators
+
+38. We can also combine comparison operators using Python's logical operators.
+
+<table>
+ <tr><td>Operator</td>
+ <td>Description</td>
+ <td>Example</td>
+ </tr>
+ <tr><td><code>and</code></td>
+ <td>Returns <code>True</code> if both statements are true</td>
+ <td><code> x < 5 and x < 10</code></td>
+ </tr>
+ <tr><td><code>or</code></td>
+ <td>Returns <code>True</code> if one of the statements is true</td>
+ <td><code>x < 5 or x < 4</code></td>
+ </tr>
+ <tr><td><code>not</code></td>
+ <td>Reverses the result; returns <code>False</code> if the result is <code>True</code></td>
+ <td><code>not(x < 5 and X < 10)</code></td>
+ </tr>
+ </table
+
+## Additional Resources
+
+39. To learn more about operators in Python:
+  * [Arithmetic operators](https://www.w3schools.com/python/gloss_python_arithmetic_operators.asp)
+  * [Comparison operators](https://www.w3schools.com/python/gloss_python_comparison_operators.asp)
+  * [Logical operators](https://www.w3schools.com/python/python_operators.asp)
+
+# Lists
+
+40. Python allows us to store information in a few different ways. 
+
+41. Let’s start with lists. 
+  * Lists are an ordered collection of items
+  * They can be numbers or strings. 
+  * The individual values in a list are called elements or items
+  * Lists are typically assigned to a variable
+  * Items in a list are contained within `[ ]` and the individual items are separated by a comma (`,`). 
+
+## Lists of Strings
+
+42. Write a list of a few of your favorite things.
+
 ```Python
 cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
 ```
 
-35. We can print this list with a print function `print(cookies)`, but Python returns a representation of the list, just as we entered it.
+43. We can print this list with a print function `print(cookies)`, but Python returns a representation of the list, just as we entered it.
 `['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']`
 
-36. This isn’t particularly useful by itself; however, we can use the position of each item (called the *index*) to perform different functions.
+44. This isn’t particularly useful by itself; however, we can use the position of each item (called the *index*) to perform different functions.
 
-37. Add a print function calling a specific item on your list.
+45. Add a print function calling a specific item on your list.
 ```Python
-print(cookies[0].title())
+print(cookies[0])
 ```
 
-38. This command returns the first item on my list. This is the item in the `0` position on my list.
-```Python
-Chocolate Chip
-```
-39. Items in a list are indexed with a number, **beginning with 0 NOT 1.**
+46. This command returns the first item on my list. This is the item in the `0` position on my list.
 
-40. A `print` command that outputs the last item on my list of four items would look like this.
 ```Python
-cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-print(cookies[3].title())
+chocolate chip
 ```
 
-41. We can also work backwards on our list using negative numbers. For example, to call the last item on the list we could also use the index position `-1`.
+47. Items in a list are indexed with a number, **beginning with 0 NOT 1.**
+
+48. A `print` command that outputs the last item on my list of four items would look like this.
 ```Python
 cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-print(cookies[-1].title())
+print(cookies[3])
 ```
 
-42. To return the second to last item, we could use -2. For the third to last -3, etc. etc.
+49. We can also work backwards on our list using negative numbers. For example, to call the last item on the list we could also use the index value `-1`.
 
-43. We can concatenate our list items in strings.
 ```Python
 cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-print("My favorite cookie to bake is " + cookies[1].title() + ".")
+print(cookies[-1])
 ```
-44. Which outputs `My favorite cookie to bake is snickerdoodle.`
 
-45. We can also change the items in a list. 
+50. To return the second to last item, we could use -2. For the third to last -3, etc. etc.
 
-46. Maybe I have a friend who is allergic to peanut butter. I can change the `peanut butter` entry.
+51. We can concatenate our list items in strings.
+
 ```Python
 cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-cookies[2] = 'oatmeal'
-print(cookies)
+print("My favorite cookie to bake is " + cookies[1] + ".")
 ```
-47. The print function outputs the modified list.
-`['chocolate chip', 'snickerdoodle', 'oatmeal', 'sugar']`
 
-48. We can also add data to our list using the append function.
+52. Which outputs `My favorite cookie to bake is snickerdoodle.`
+
+53. We can  use `append` to add values to a list
+
 ```Python
-cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-cookies.append('oatmeal')
-print(cookies)
+# create empty list and assign to variable
+myPets = []
+
+# add one string to list
+myPets.append('Christy Matthewson')
+
+# add another string to list
+myPets.append('Smoky Jo Wood')
+
+# add a third string to list
+myPets.append('Sandy Koufax')
+
+# show list
+print(my_pets)
 ```
 
-49. The print function now returns a list of five items `[chocolate chip, snickerdoodle, peanut butter, sugar, oatmeal]`
+54. In this block of code, we started with an empty list `[]`. Then the next lines with `append` added new items to the list.
 
-50. We can also use `append` to create new lists.
+## Lists of Numbers
+
+55. We can also create a list of numbers in Python
+
 ```Python
-my_pets = []
-my_pets.append('Christy Matthewson')
-my_pets.append('Smokey Jo Wood')
-print(my_bets)
+# create list with numbers and assign to variable
+num_list = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
+
+# show first number in list
+num_list[0]
+
+# show last number in list
+num_list[-1]
+
+# show full list
+num_list
 ```
 
-51. In this block of code, we started with an empty list `[]`. Then the next two lines with `append` added new items to the list.
+<blockquote>Q2: Create your own list of numbers or strings, using the examples in the lab as a starting point. What is the number position for each of the items in your list? How would you return the value of the first item? How would you return the value of the last item?</blockquote>
 
-<blockquote>Q6: Create your own list using the program above as an example. Share your code in your notebook as well as the result. What is the number position for each of the items in your list? How would you return the value of the first item? How would you return the value of the last item?</blockquote>
+# Dictionaries
 
-52. With `append`, items are added to the end of the list. 
+<p align="center"><a href="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_1.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_1.png?raw=true" /></a></p>
 
-53. The `insert` function allows us to add items to any position in the list.
+<p align="center"><a href="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_2.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_2.png?raw=true" /></a></p>
+
+56. A dictionary is a mapping between a set of indices (keys) and a set of values. 
+
+57. Each key maps to a value. 
+
+58.  The association of a key and a value is called a key-value pair.
+
+## Creating a Dictionary
+
+59. We have two options for creating a dictionary.
+
+60. We can use the `dict()` function or the `{}` syntax.
+
+61. Examples for each:
+
 ```Python
-fruit = ['apple', 'pear', 'banana']
-fruit.insert(1, 'orange')
-print(fruit)
+# creating empty dictionary using dict()
+english_to_french = dict({})
+
+# check variable type
+type(english_to_french)
+
+# create dictionary this time with key-value pairs
+english_to_french = dict({
+  'one': 'un',
+  'two': 'deux',
+  'three': 'trois',
+  'four': 'quatre',
+  'five': 'cinq'
+})
 ```
-54. This block of code adds orange to the second position on the list (index position 1).
 
-55. The output is `['apple', 'orange', 'kiwi', 'banana']`
-
-56. Conversely, the `del` statement allows you to delete items from your list using the index number.
-
-57. The following code will remove orange from the list.
 ```Python
-fruit = ['apple', 'orange', 'pear', 'banana']
-del fruit[1]
-print(fruit)
+# create empty dictionary using curly brackets {}
+english_to_french = {}
+
+# check variable type
+type(english_to_french)
+
+# create dictionary this time with key-value pairs
+english_to_french = {
+  'one': 'un',
+  'two': 'deux',
+  'three': 'trois',
+  'four': 'quatre',
+  'five': 'cinq'
+}
 ```
 
-58. We can also delete items by value (instead of position) using `remove`.
+## Interacting With A Dictionary
+
+62. Now that we have a dictionary, we can start to interact with values in the dictionary.
+
 ```Python
-fruit = ['apple', 'orange', 'pear', 'banana']
-fruit.remove('orange')
-print(fruit)
+print(english_to_french)
 ```
 
-<blockquote><code>remove</code> only removes the first instance of the value in the list. So, if in the previous example orange appeared on the list a second time, only the first instance would be removed. To remove all instances, you would need to perform a loop (we’ll talk about this shortly).</blockquote>
+63. Notice that when we print the dictionary, the key-value pairs are **unsorted** and do not appear in the order in which we added them.
 
-## A few additional functions that can be useful when working with lists.
+64. Due to the nature of the dictionary data structure, we cannot make any assumptions about the order in which items appear in the dictionary.
 
-### `Reverse`
+65. We can use the index operator to read the value for a particular key.
 
-59. To print in reverse order, use `reverse`.
 ```Python
-fruit = ['apple', 'orange', 'pear', 'banana']
-fruit.reverse()
-print(fruit)
+# access value for 'one' key
+english_to_french['one']
 ```
 
-### `Sort`
+66. If we try to access the value for a key that does not exist, Python will return a KeyError.
 
-60. To alphabetize your list, use the `sort` method.
 ```Python
-fruit = ['apple', 'orange', 'pear', 'banana']
-fruit.sort()
-print(fruit)
+english_to_french['asdf']
 ```
 
-### `Len`
+67. We can use the `.keys()` method to get a list of all keys in the dictionary.
 
-61. To find the length of your list, use the `len` function.
 ```Python
-fruit = ['apple', 'orange', 'pear', 'banana']
-length = len(fruit)
-print(length)
+print(english_to_french.keys())
 ```
 
-<blockquote>Q7: What is an alternative way to write the `print` command to return the length of the list. *Hint* you’ll combine the last two lines of the example above.</blockquote>
+68. We can use the `.values()` method to get a list of all the values in the dictionary.
 
-# Task 6: Lists of Numbers
-
-62. We can also work with numbers in lists. 
-
-63. We can create a list in the same way that we did in the previous example, or we can use the range function.
 ```Python
-
-#In this example we'll wrap the list() function around the range() function to create a list of numbers
-
-numbers = list(range(1,10))
-print(numbers)
+print(english_to_french.values())
 ```
 
-64. This outputs `[1, 2, 3, 4, 5, 6, 7, 8, 9]`
+69. For more on Python dictionaries: https://www.w3schools.com/python/python_dictionaries.asp
 
-65. You may have expected to see the numbers one to ten printed. This is yet another example of the quirks of working with programming languages. 
+# `if, else, elif` statements
 
-66. Python starts with the first number and quits when it reaches the last number of your range. Because it stops at 10, it doesn’t include the 10.
+70. We can use conditional statements to change the behavior of a program based on whether specific conditions are or are not met.
 
-<blockquote>Q8: How would you modify this code to output the full range 1-10?</blockquote>
+71. To put this another way, conditional statements check boolean expressions (i.e. conditions), and change the behavior of the program accordingly.
 
-67. What if we just wanted the odd numbers in this range? We could add an additional value to the `range` function to tell the computer to count by two.
+## Operator Review
+
+72. Operators used to compare two objects:
+- `==`    equal to
+- `==`    equal to
+- `!=`    not equal to
+- `>=`    greater than or equal to
+- `>`     greater than
+- `<`     less than
+- `<=`    less than or equal to
+
+73. Boolean logical operators:
+- `and`   both must be true
+- `or`    one or both must be true
+- `not`   reverses the truth value
+
+74. We can use and test for conditions in a few key ways, specifically through `if` statements and `loops`.
+
+75. More on loops later, but for now...
+
+76. Python's comparison operators serve as conditional tests that return a True or False.
+
 ```Python
-numbers = list(range(1,11,2))
-print(numbers)
-```
-<blockquote>Q9: How would you rewrite the code to include only the even numbers from 1 to 10?</blockquote>
-
-68. Can you write a program that creates a list that represents all of the different patterns we could represent from 1 bit to 8 bits, like our chart from binary math lab?
-
-- 1 bit - 2 patterns
-- 2 bits - 4
-- 3 bits - 8
-- 4 bits - 16
-- 5 bits - 32
-- 6 bits - 64
-- 7 bits - 128
-- 8 bits - 256
-- n bits -2<sup>n</sup> patterns
-
-69. Try to write a program that outputs the list: `[2, 4, 8, 16, 32, 64, 128, 256]`.
-
-<blockquote>Hint: a double * represents exponents in Python. So 2<sup>2</sup> would be <code>2**2</code>.</blockquote>
-
-70. There are multiple ways to achieve this output.
-```Python
-patterns = []
-for bit in range(1,9):
-  patterns.append(2**bit)
-print(patterns)
-```
-
-<blockquote>Q10: Either include a snippet of your version of this program in your notebook and explain your code, AND/OR explain how the example version of this program works.</blockquote>
-
-71. Python also allows us to return the minimum value, maximum value, and sum of the numbers in a list.
-```Python
-patterns = []
-for bit in range(1,9):
-  patterns.append(2**bit)
-
-print(min(patterns))
-print(max(patterns))
-print(sum(patterns))
-```
-
-72. This program outputs
-`2`
-`256`
-`510`
-
-# Task 7: Working With Loops
-
-73. Loops are one of the most common computer functions. 
-
-74. In a loop, the computer will continue to follow the instructions, until it can’t perform that function any longer. We’ll use a list to write our first loop.
-```Python
-#loops through a list of the members of the House Stark.
-
-characters = ['Arya', ' Benjen', 'Bran', 'Catelyn', 'Eddard', 'Rickon', 'Robb', 'Sansa']
-
-for character in characters:
-  print(character.title() + "Stark")
-```
-
-<blockquote>Note: I used the # to create a comment and describe the purpose of this Python program. Comments are written for the human users of the program and will not be processed as code by the computer. Every programming language uses a different set of symbols to designate comments in the code. It’s good practice to include comments in your code so that you code can be modified and reused.</blockquote>
-
-<blockquote>Note the use of the plural for the name of the list and the singular for the individual item is not required. We are just declaring variables here. I could have used anything to name the individual items (e.g. for person in characters). All you are doing with this step is setting a new variable for the individual item. It is standard convention to use the plural and singular terms so that the person reading the code can interpret what it is doing.</blockquote>
-
-75. The loop command steps through the list one value at a time. The loop continues until it reaches the end of the list. 
-
-76. In this case, for each item in the list called `“characters”` the program prints the value of each `“character”` in the list concatenated with the string `" Stark”`. 
-
-This produces the output:
-```
-Arya Stark
-Benjen Stark
-Bran Stark
-Catelyn Stark
-Eddard Stark
-Rickon Stark
-Robb Stark
-Sansa Stark
-```
-
-77. Now let's look at a different loop.
-```Python
-characters = ['Arya', ' Benjen', 'Bran', 'Catelyn', 'Eddard', 'Rickon', 'Robb', 'Sansa']
-print('Members of the House Stark:')
-for character in characters:
-  print(character.title() + " Stark")
-print(characters[0].title() + " is my favorite.")
-```
-
-<blockquote>Q11: What do you expect this code to output? Explain how this program works in your own words.</blockquote>
-
-78. Comments that walk through each line of this program:
-```Python
-#this line creates the list of character names
-characters = ['Arya', ' Benjen', 'Bran', 'Catelyn', 'Eddard', 'Rickon', 'Robb', 'Sansa']
-
-#this first print command prints a header for my list "Members of the House Stark"
-print('Members of the House Stark:')
-
-#here is the loop from the previous example
-for character in characters:
-  #the indentation is important here. This indent indicates that this print command is part of the loop
-  print(character.title() + " Stark")
-  
-#this line is not indented, so it is executed after the loop is complete.  
-print(characters[0].title() + " is my favorite.")
-```
-
-# Task 8: If...Statements
-
-79. If-then statements are another common computer function. If statements are conditional, meaning that there is a test to determine if a statement is true or false and then the computer takes some defined action.
-```Python
-#here is a list of names
-names=['department of computer science', 'computer science department', 'cs']
-
-#here is a loop. I am telling Python to look at each of the items in this list
-for name in names:
-
-  #this indent tells Python that this next action is part of the loop
-  #this is my if statement. Note that like a loop it ends in a colon (:)
-  #the double == is an equality operator. It's a boolean test (returns TRUE or FALSE)
-  if name == 'cs':
-
-    #if the value is equal to cs, then the conditional statement returns TRUE and the value is printed in all upper case letters
-    print(name.upper())
-
-  #the else statement gives the set of instructions for a FALSE value. Notice that it is indented same as the if statement.
-  else:
-
-    #All other values that are not 'cs' are printed as Titles
-    print(name.title())
-```
-
-80. This program returns the output
-`Department of Computer Science`
-`Computer Science Department`
-`CS`
-
-81. This program without the comments:
-```Python
-names=['department of computer science', 'computer science department', 'cs']
-
-for name in names:
-  if name == 'cs':
-    print(name.upper())
-  else:
-    print(name.title())
-```
-
-<blockquote>Q12: Did the program return the results that you expected? Explain the output in your own words.</blockquote>
-
-82. Python uses a variety of Boolean Operators – these are the conditional tests that return a True or False.
-```Python
-#set the variable number to 10
+# set the variable number to 10
 number = 10
 
-#the following statements will return true or false
+# the following statements will return true or false
 
 # EQUAL !==
 print(number == 15)
@@ -548,521 +632,377 @@ print(number > 1 and number <20)
 print(number ==10 or number ==20)
 ```
 
-83. We can also test for values in a list.
-```Python
-fruits = ['apple', 'pear', 'orange']
+## `if` Statements
 
-#a test to see if apple is on the list
-if 'apple' in fruits:
-  print('Would you like an apple?')
+77. `if` statements use the `if` keyword to test if a condition is true.
+
+78. `if` statements are conditional, meaning that there is a test to determine if a statement is true or false, and then the computer takes some defined action.
+
+79. The basic syntax for an `if` statement:
+
+```Python
+if condition:
+ statement(s)
+```
+
+80. The `if` statement tests if a particular condition is true. And if so, executes the command nested under the initial `if` statement.
+
+81. To illustrate that another way:
+
+```Python
+if this condition is true:
+ then do this thing
+```
+
+82. A couple things to note about this syntax:
+- A colon always follows the first line of an `if` statement
+- The code that will run if the statement is true is nested or intented beneath the `if` keyword
+
+83. For example, let's say we have a Python program where the variable `n` equals `0`.
+
+84. We want to write a program that, if `n` equals `0`, prints the message `n is zero`.
+
+85. We can do that using an `if` statement.
+
+```Python
+n = 0
+
+if n == 0:
+ print('n is zero')
+```
+
+## `if-else` Statements
+
+86. Suppose we want to print one message when the condition (`number > 0`) is true, and a different message when the condition is false. 
+
+87. We can do that by using an `else` clause along with an `if` keyword.
+
+88. The basic syntax for `if-else`:
+
+```Python
+if condition:
+ statement(s)
 else:
-  print('Sorry, we are all out of apples.')
+ statement(s)
+```
 
-#a test to see if banana is NOT on the list
-if 'banana' not in fruits:
-  print('Yes, we have no bananas')
+89. The statement indented beneath the `if` keyword will only run when the `if` condition is true.
+
+90. In an `if-else` statement, the statement indented beneath `else` will only run if the `if` condition is not true (or false).
+
+91. An example that illustrates this logic:
+
+```Python
+# ask user to enter a number
+number = input("Enter a number: ")
+
+# test if number is greater than zero
+if number > 0:
+  print ("That number is positive.")
+
+# if number is not greater than zero
 else:
-  print('Would you like a banana?')
+  print ("Definitely NOT positive.")
+
+# message that prints at end of program
+print ("This message prints every time.")
 ```
 
-<blockquote>Q13: Explain what this program will output and why.</blockquote>
+## `elif` statements
 
-# Task 9: Gathering Input
+92. We can also use the `elif` keyword along with the `if` keyword to introduce a new condition. 
 
-84. So far we’ve written programs that have included the data being processed, but many programs ask for input from their users. 
-
-85. The `raw_input` function allows you to prompt a user for string-based information. 
-```Python
-name = raw_input("Please enter your name: ")
-print("Hello, " + name)
-```
-<blockquote>Q14: What did the program output? Explain this program in your own words.</blockquote>
-
-86. Here we set the variable name to the input that we receive from the user. 
-
-87. The text in the `()` following the `raw_input` function provides the prompt for the user. We can then reuse the name variable in the `print` function.
-
-88. Now let’s try an example with numbers. The following program sets a number and asks the user to guess the number.  Notice that we use the `input()` function for integers.
-```Python
-#sets variable secret_number
-secret_number = 3
-
-#asks the user for a number. NOTE we use input instead of raw_input for integers
-number = input("Guess a number between 1 and 10: ")
-
-#sets up a loop that will continue to run while the number does not match the secret number
-while number !=secret_number:
-
-  #sets up conditional statements that return clues for the user
-  if number == secret_number + 1 or number == secret_number -1:
-    print("You are really close!")
-
-  #NOTE that the elif statement here stands for "else if"
-  #you want to use elif if you have more than two conditions
-  elif number < secret_number:
-    print("Too low!")
-
-  else:
-    print("Too high!")
-
-  #tells the user to input a new number to guess again
-  number = input("Guess again: ")
-
-#prints when the user guesses the right number
-print("You guessed it!")
-```
-
-89. Program without the comments.
-```Python
-secret_number = 3
-
-number = input("Guess a number between 1 and 10: ")
-
-while number !=secret_number:
-  if number == secret_number + 1 or number == secret_number -1:
-    print("You are really close!")
-  elif number < secret_number:
-    print("Too low!")
-  else:
-    print("Too high!")
-  number = input("Guess again: ")
-
-print("You guessed it!")
-```
-
-<blockquote>Q15: Modify the code to change the range to have the user guess between 1 and 100. Then, change the conditional statement to return a “really close” message if they are within a 3 digit range of your number. Include the code in your notes and explain how the program works in your own words.</blockquote>
-
-# Task 10: Describing Data With Dictionaries
-
-90. We’ll return to inputs, loops, and conditional statements in a minute. Let’s look at another way of storing information with Python. 
-
-91. I've created metadata to describe the information about each of the items we selected for the HTML project. We can also store this metadata in Python using a Dictionary.
-
-Example of the XML (eXtensible Markup Language) file with the item metadata:
-```XML
-<books>
-  <book>
-    <title>CSS: The Definitive Guide</title>
-    <author>Eric Meyer</author>
-    <year>2007</year>
-  </book>
-  <book>
-    <title>Learning XML</title>
-    <author>Erik Ray</author>
-    <year>2003</year>
-  </book>
-</books>
-```
-
-92. For now, let’s work with the first example
-```XML
-<book>
-  <title>CSS: The Definitive Guide</title>
-  <author>Eric Meyer</author>
-   <year>2007</year>
-</book>
-```
-93. This section of XML has a few different pieces of information about one of the items in a collection. We couuld create a list to hold all of this information.
+93. Python will test the `elif` condition if previous conditions are not true.
 
 ```Python
-book=["CSS: The Definitive Guide", "Eric Meyer", "2007"]
+# elif statement example
+
+# declares x variable
+x = 1
+
+# block of code that runs if x is less than 0
+if x < 0:
+ print("x is less than 0")
+
+# block of code that runs if x equals zero
+elif x == 0:
+ print("x is equal to 0")
+
+# block of code that runs if x is greater than 0
+else:
+ print("x is greater than 0")
 ```
 
-94. But, we lose some meaning here. This now looks like an arbitrary list of information about a work. 
-
-95. In this example, a list just isn’t powerful enough to store our data. A Dictionary allows us to keep the associated descriptors for each of the items, or the metadata schema that we generated in the last project.
-
-96. A dictionary uses a slightly different syntax.
 ```Python
-book={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
-```
-97. As with a list, we assign a variable to our dictionary. In this example the variable is `work`. 
+# another elif example
 
-98. The data for the dictionary is wrapped in braces `{ }` rather than the brackets used in a list. 
+# assign a variable 
+a = 33
 
-99. The information is added in a series of pairs called key-value pairs. Each key is the equivalent of the XML tag and each value equal to the value we associated with the tag.
+# assign b variable 
+b = 33
 
-<blockquote>Q16: Create a dictionary for one of the items in your collection using the template outlined in this tutorial. Write a print command and explain the output of your program in your own words.</blockquote>
-
-100. Just like with the list, we can also create a loop to return each of the values in my new dictionary.
-```Python
-book={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
-
-for key, value in book.items():
-  print("Key: " + key)
-  print("Value: " + value)
-```
-101. This program returns the output:
-```Python
-Key: date
-Value: 2007
-Key: author
-Value: Eric Meyer
-Key: title
-Value: CSS: The Definitive Guide
-```
-
-102. This program assigns the variable `key` to the key and `value` to the value for each key-value pair. We could use any variables for key and value.
-
-103. The following program will return the same output:
-```Python
-for tag, data in book.items():
-  print("Key: " +tag)
-  print("value: " + data)
-```
-
-<blockquote>Q17: Try the following two programs. What did the programs output? Explain how each program works in your own words.</blockquote>
-```Python
-for tag in book.keys():
-  print(tag)
-```
-and 
-
-```Python
-for data in book.values(): 
-    print(data)
-```  
-  
-104. Like with lists, we can start with an empty dictionary and add values.
-```Python
-book={}
-book['title']='CSS: The Definitive Guide'
-book['author']='Eric Meyer'
-book['date']='2007'
-  
-print(book)
-```
-  
-105. This program outputs `{'date': 2007, 'author': 'Eric Meyer', 'title': 'CSS: The Definitive Guide'}`
-  
-106. We can modify elements in the dictionary and add new elements in the same way.
-```Python
-book={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
-  
-#modify the date to 2002
-book['date'] = 2002
-  
-print(book)
-```
-  
-<blockquote>Q18: What do you expect this program to output? Why?</blockquote>
-  
-107. We can also delete key-value pairs using the `del` function.
-```Python
-book={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
-  
-del book['author']
+# conditional statement using if
+if b > 1:
+ print("b is greater than a")
  
-print(book)
+# conditional statment using elif to test, only when if statement is false
+elif a == b:
+ print("a and b are equal")
 ```
 
-108. This outputs `{'date': '2007', 'title': 'CSS: The Definitive Guide'}`
+94. For more information on `if, else, elif`: https://www.w3schools.com/python/python_conditions.asp
 
-109. We can also check to see if a key or value is in the dictionary.
-```Python
-book={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
+# Loops
 
-if 'title' not in book.keys():
-  print("The Title is missing.")
+95. Loop statements are a type of conditional statement that rely on the underlying logic of conditional execution.
 
-if 'HTML' not in book.values():
-  print("The title is " + book['title'])
-```
+96. In Python, loops repeatedly execute a series of tasks.
+- Key term: *loop(s), looping*
 
-<blockquote>Q19: Explain the if functions in your own words. What does this program output? Why?</blockquote>
+97. Each time through the body of a loop is called an iteration.
+- Key term: *iteration*
 
-# If Time Allows
+98. An iteration can involve things like iterating through items in a list or testing if specific conditions are met, and then doing “something” as the result or endpoint for the loop.
 
-The following tasks are not required to complete the lab notebook. But if you want to see how Python can interact with XML, carry on!
+## `for` Loops
 
-## Task 11: Nesting Dictionaries
+99. `for` loops let us iterate through a definite set of objects.
 
-A. As we just demonstrated, dictionaries have different afforedances than lists. 
+100. In each iteration through the `for` loop, Python will:
+- Extract one element from the dataset
+- Execute the body of the `for` loop using the item bound to the element
+- Go back to the first step
+- Keep iterating through the loop until reaching the end of the dataset
 
-B. But, we’ve described three different objects in our collection using lists. What could be involved in transforming these lists into dictionaries?
-
-```XML
-<books>
-  <book>
-    <title>CSS: The Definitive Guide</title>
-    <author>Eric Meyer</author>
-    <year>2007</year>
-  </book>
-  <book>
-    <title>Learning XML</title>
-    <author>Erik Ray</author>
-    <year>2003</year>
-  </book>
-</books>
-```
-
-C. One way to accomplish this goal with Python would be to generate two different dictionaries.
+101. The basic syntax in a `for` loop:
 
 ```Python
-book_0={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
-book_1={'title': 'Learning XML', 'author': 'Erik Ray', 'date': '2003'}
+for item in dataset:
+ statement(s)
 ```
 
-D. We could then use a list to generate a list of the metadata for each of the works.
+102. In this syntax, `item` is a placeholder for each element in `dataset`. 
+
+103. You can replace `item` with another word or letter character.
 
 ```Python
-book_0={'title': 'CSS: The Definitive Guide', 'author': 'Eric Meyer', 'date': '2007'}
-book_1={'title': 'Learning XML', 'author': 'Erik Ray', 'date': '2003'}
-
-books = [book_0, book_1]
-print(books)
+for i in dataset
 ```
 
-E. While the this program outputs all of the metadata, one of the advantages of our XML file is that all of the information was stored in a single place.
+104. In this syntax, `dataset` stands for the list of items we want Python to iterate over.
 
-F. Another solution would be to embed a list in a dictionary.
+105. That list of items could be a list variable, a list of numbers, a string of characters, etc.
+
+### `for` Loops and Lists of Numbers
+
+106. Let's say we have a list of numbers, and we want Python to iterate through each number in the list and print the number.
 
 ```Python
-books = {
-  'title': ['CSS: The Definitive Guide', 'Learning XML']
-  'date': ['2007', '2003']
-  'author': ['Eric Meyer', 'Erik Ray']
-  }
-
-print ("My books include books by " + books['author'] + ":")
-for title in books['title']:
-  print("\t" + title)
+for i in [0, 1, 2, 3]:
+ print(i)
 ```
 
-G. This program outputs:
-
-```
-My books include books by Eric Meyer and Erik Ray:
-  CSS: The Definitive Guide
-  Learning XML
-```
-
-<blockquote>Note: The <code>\t</code> is a short cut for a TAB so that my list was indented. <code>\n</code> will generate a new line in your output.</blockquote>
-
-H. While this dictionary contains all of the data from my XML, there are some limitations. The dates are not specifically connected to the title that they are associated with. We can solve this problem by nesting a dictionary in a dictionary.
+107. Alternatively, we could create a variable for our list of numbers.
 
 ```Python
-books = {
-  'CSS: The Definitive Guide': {
-    'date': '2007', 
-    'author': 'Eric Meyer'
-    },
-  'Learning XML': {
-    'date': '2003',
-    'author': 'Erik Ray'
-    }
-}
+# create list of numbers
+number_list = [0, 1, 2, 3]
+
+# for loop
+for i in number_list:
+ print(i)
 ```
 
-I. This example includes a dictionary called `books` that holds two other dictionaries. It uses the title as the key for each of the dictionaries for the works. The value of each of these keys is a dictionary containing “title”, “date”, and "author.”
+108. The loop command steps through the list one value at a time. 
 
-J. The following program will output the titles of items in this collection as well as associated dates.
+109. The loop continues until it reaches the end of the list. 
+
+### `for` Loops and Strings
+
+110. We can also use a `for` loop to iterate over a list of strings.
+
+111. Let's say we have a list of pepper types.
 
 ```Python
-print("My Books: ")
-for book, book_info in books.items():
-  full_title = book + " (" + book_info['date'] + ")"
-  print("\t" + full_title_title())
-```
-K. This program prints the title first as a separate line. The `for` loop digs into the data for each of the books. 
-
-L. `book` is the variable assigned to each of the keys in the `books` dictionary - in this example it is the titles of each of the books. 
-
-M. `book_info` is the variable assigned to each of the values. `method .items()` works through each of the dictionaries. 
-
-N. The next line, assigns a variable `full_title` that concatenates each work variable with an opening `(`, the date for each work called with `book_info[‘date’]`, and a closing `)`. 
-
-O. The final line prints a tab `\t` before each concatenated string that we just created with the `full_title` variable.
-
-P. This outputs:
-```
-My Books:
-  CSS: The Definitive Guide (2007)
-  Learning XML (2003)
+peppers = ["bell", "poblano", "jalapeno", “banana”, “chile”, “cayenne”]
 ```
 
-<blockquote>Write a similar dictionary for your XML file and generate some output. Copy and paste your code and your result into your notebook. Explain how your program works in your own words.</blockquote>
-
-## Task 12: Parsing XML With Python
-
-Q. You may be thinking, “…but we already have an XML file with this data in it. Can we use Python to with .xml?” The answer to this question is YES! 
-
-R. In this next task, we’ll use the ElementTree API https://docs.python.org/3/library/xml.etree.elementtree.html. This is part of the Python library that has been written specifically to parse XML. 
-
-S. We’ll only work with a few functions and methods from ElementTree as an introduction to the tool.
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<books>
-  <book>
-    <title>CSS: The Definitive Guide</title>
-    <author>Eric Meyer</author>
-    <year>2007</year>
-  </book>
-  <book>
-    <title>Learning XML</title>
-    <author>Erik Ray</author>
-    <year>2003</year>
-  </book>
-</books>
-```
-
-T. First, we need to import the ElementTree module into our file so that we can continue to use the methods and functions associated with ElementTree. Type this first line of code into a new file called `XML.py` (or whatever you’d like to call it).
+112. We can use a `for` loop to iterate over each string in the list.
 
 ```Python
-import xml.etree.cElementTree as ET
+peppers = ["bell", "poblano", "jalapeno", “banana”, “chile”, “cayenne”]
+
+for x in peppers:
+ print(x)
 ```
 
-U. Now we need to import our .xml file. Remember, you’ll need to include the entire file path for your .xml file if it is not in the same folder as your python file.
+113. We can also use a `for` loop to iterate through characters in a single string.
+
+114. Let's say we want to iterate over the characters in the string `elements`.
 
 ```Python
-import xml.etree.cElementTree as ET
-tree = ET.parse('books.xml')
+for x in 'elements':
+ print(x)
 ```
-V. And, finally, we need to get the root element of our xml file. Remember in our last project we also had to name the root element in our XSL file. This tag that is at the top of the hierarchy. In the example file, the root is `<books>`.
 
 ```Python
-import xml.etree.cElementTree as ET
-tree = ET.parse('books.xml')
-root = tree.getroot()
+# another example of iterating over characters in a string
+
+string = 'elements'
+
+for x in string:
+ print(x)
 ```
 
-W. Now we are ready to work with our .xml file in Python. Try adding `print` commands.
+115. Let's start combining `for` loops with some the other concepts we've covered.
 
 ```Python
-import xml.etree.cElementTree as ET
-tree = ET.parse('books.xml')
-root = tree.getroot()
+#loops through a list of the members of the House Stark.
 
-print(root.tag)
-print(root.attrib)
+characters = ['Arya', ' Benjen', 'Bran', 'Catelyn', 'Eddard', 'Rickon', 'Robb', 'Sansa']
+
+for character in characters:
+  print(character.title() + "Stark")
 ```
 
-X. This program returns the output:
+<blockquote>Note the use of the plural for the name of the list and the singular for the individual item is not required. We are just declaring variables here. We can use anything to name the individual items (e.g. for person in characters). All this does is set a new variable for the individual item. Standard convention is to use the plural and singular terms so that the person reading the code can interpret what it is doing.</blockquote>
+
+116. Remember the loop command steps through the list one value at a time. The loop continues until it reaches the end of the list. 
+
+117. In this case, for each item in the list called `“characters”` the program prints the value of each `“character”` in the list concatenated with the string `" Stark”`. 
+
+118. This produces the output:
 ```
-books
-{}
+Arya Stark
+Benjen Stark
+Bran Stark
+Catelyn Stark
+Eddard Stark
+Rickon Stark
+Robb Stark
+Sansa Stark
 ```
 
-Y. This set of commands returns the tag for the root element `books` and an empty set of braces for the attribute because there is not an attribute associated with the `books` tag. 
+119. For more information on `for` loops: https://www.w3schools.com/python/python_for_loops.asp
 
-Z. You probably didn’t assign attributes to your XML tags, so we’ll keep working with tags. If you have attributes in your file, you can consult the documentation for ElementTree to modify your code.
+## `while` Loops
 
-AA. This code gave us the root element, but what if we want to see the structure of our document? We can use the `iterator` function to pull all of the elements from our XML file in a simple loop that outputs each tag and the text value associated with it.
+120. Another way to modify the control flow of a program is to have it execute one or more statements repeatedly.
+
+121. A `while` loop will test for an initial condition and continue iterating through the loop until the condition is `False`.
+
+122. In each iteration through the `while` loop, Python will:
+- Evaluate the initial condition (which is a Boolean true/false expression)
+- If the condition is `False`, exit the loop and continue the program
+- If the condition is `True`, then execute other statements in the body of the loop and return to the beginning of the loop
+
+123. The basic syntax for a `while` loop:
 
 ```Python
-import xml.etree.cElementTree as ET
-tree = ET.parse('books.xml')
-root = tree.getroot()
-
-iter = root.getiterator()
-
-for element in iter:
-  print element.tag, element.text
+while condition:
+ statement(s)
 ```
 
-BB. This program outputs:
-```
-books
-
-book
-
-title CSS: The Definitive Guide
-date 2007
-author Eric Meyer
-book
-
-title Learning XML
-date 2003
-author Erik Ray
-```
-
-CC. Now let’s get some data from the file. This next program creates a loop that returns all the titles in the file. 
-
-DD. In the sample XML file, `<book>` tag is the child of `<books>` and `<title>` is a child of `<book>`. 
-
-EE. This loop says for each work, assign text from the `title` element to the variable `title`, and then print the titles.
+124. To express this logic another way:
 
 ```Python
-import xml.etree.cElementTree as ET
-tree = ET.parse('books.xml')
-root = tree.getroot()
-
-for book in root.findall('book'):
-  title = book.find('title').text
-  print(title)
+while THIS CONDITION IS TRUE
+ DO THIS THING
 ```
 
-FF. This program outputs:
-```
-CSS: The Definitive Guide
-Learning XML
-```
-GG. But what if we want to pull the title and date? We can modify the code to also pull the information from the `<date>` tag.
+### `while` Loop Examples
+
+#### `while` Loop Example A
+
+125. Let's look at a sample `while` loop that uses the `<` (less than) comparison operator.
 
 ```Python
-import xml.etree.cElementTree as ET
-tree = ET.parse('books.xml')
-root = tree.getroot()
+n = 0
 
-for book in root.findall('book'):
-  title = book.find('title').text
-  date = book.find('date').text
-  
-  print(title)
+while n < 10:
+ print(n)
+ n = n +1
 ```
 
-<blockquote>What do you expect this program out output? Why? Explain how this code works in your own words.</blockquote>
+126. To walk through what is happening in each line of this program...
 
-<blockquote>Write a similar program for the .xml file that you created in the last exercise. Pull data from at least two elements. Copy your code and your output in your notebook and explain what your code does (or is attempting to do).</blockquote>
+127. `n=0` assigns the value zero (0) to the variable `n`.
 
-# Lab Questions
+128. `n < 10` is a conditional statement that will return `True` as long as `n` is less than `10`.
 
-All of the required questions are listed here. Be sure to answer each question completely, including an explanation of how you arrived at your answer.
+129. So `while n < 10` sets up a `while` loop in which the body of the loop (the lines of code nested or indented beneath the first line of the loop) will run as long as the initial condition is `true`.
 
-Q1: In your own words, explain the difference between the `print(hello)` command we just used and `print(“hello”)`.
+130. The first line in the body of the loop `print(n)` prints the value of `n` for that iteration.
 
-Q2: Describe the syntax three commands that we just used in your own words. Define the function and method for each example.
+131. The second line in the body of the loop `n = n+1` reassigns the value of `n` to be `n + 1`.
 
-Q3: Explain how each of these two programs (above) work in your own words.
+132. After executing both lines in the body of the loop, the next iteration of the loop begins by evaluating the `n < 10` conditional statement.
 
-Q4: Why does `print(2/3)` return 0? How would you modify your code to return the decimal number?
+#### `while` Loop Example B
 
-Q5: Explain `concatenation` in your own words. Why must we convert numbers to strings in the program above? Refer to this example and the previous example.
+133. Another example of a `while` loop.
 
-Q6: Create your own list using the program above as an example. Share your code in your notebook as well as the result. What is the number position for each of the items in your list? How would you return the value of the first item? How would you return the value of the last item?
-
-Q7: What is an alternative way to write the `print` command to return the length of the list. *Hint* you’ll combine the last two lines of the example above.
-
-Q8: How would you modify this code to output the full range 1-10?
-
-Q9: How would you rewrite the code to include only the even numbers from 1 to 10?
-
-Q10: Either include a snippet of your version of this program in your notebook and explain your code, AND/OR explain how the example version of this program works.
-
-Q11: What do you expect this code to output? Explain how this program works in your own words.
-
-Q12: Did the program return the results that you expected? Explain the output in your own words.
-
-Q13: Explain what this program will output and why.
-
-Q14: What did the program output? Explain this program in your own words.
-
-Q15: Modify the code to change the range to have the user guess between 1 and 100. Then, change the conditional statement to return a “really close” message if they are within a 3 digit range of your number. Include the code in your notes and explain how the program works in your own words.
-
-Q16: Create a dictionary for one of the items in your collection using the tags and information from your XML file. Write a `print` command and explain the output of your program in your own words.	
-
-Q17: Try the following two programs. What did the programs output? Explain how each program works in your own words.
-  
 ```Python
-for tag in book.keys():
-  print(tag)
+# assign x variable
+x = 10
+
+# looping structure using greater than or equal to conditional statement
+while x >= 0:
+ print(x)
+ x = x-1
+
+# message to print once loop has completed
+print("I'm done!")
 ```
-and 
 
-```Python
-for data in book.values(): 
-    print(data)
-```  
-  
-Q19: Explain the `if` functions in your own words. What does this program output? Why?
+134. For more information on `while` loops: https://www.w3schools.com/python/python_while_loops.asp
+
+<blockquote>Q3: In your own words, what is iteration?</blockquote>
+
+<blockquote>Q4: In your own words, what is the difference between a `for` loop and a `while` loop?</blockquote>
+
+# Putting it all together
+
+135. The last thing we'll do in this lab is make sure you're comfortable with a few core elements of Python syntax.
+
+136. For each component, you're asked to describe the concept in your own words and write an example of the concept using Python syntax.
+
+137. These examples do not need to be overly complex.
+  * Modifying example code provided in the lab is absolutely fine. 
+  * Using things you wrote while working through the lab is absolutely fine. 
+  * Consulting linked resources is fine (include a comment or note that mentions any resources you consulted beyond the lab procedure.
+
+Q5: For each concept, describe in your own words and provide an example using Python syntax. Use comments/narrative text to note each part of your answer.
+- `print()` statement
+- string variable
+- integer variable
+- concatenation
+- arithmetic operators
+- comparison operators
+- dictionary
+- `if, else, elif` statements
+- `for` loop
+- `while` loop
+
+# Lab Notebook Questions
+
+Q1: In your own words, explain the difference between the `print(hello)` command and `print(“hello”)`.
+
+Q2: Create your own list of numbers or strings, using the examples in the lab as a starting point. What is the number position for each of the items in your list? How would you return the value of the first item? How would you return the value of the last item?
+
+Q3: In your own words, what is iteration?
+
+Q4: In your own words, what is the difference between a `for` loop and a `while` loop?
+
+Q5: For each concept, describe in your own words and provide an example using Python syntax. Use comments/narrative text to note each part of your answer.
+- `print()` statement
+- string variable
+- integer variable
+- concatenation
+- arithmetic operators
+- comparison operators
+- dictionary
+- `if, else, elif` statements
+- `for` loop
+- `while` loop
