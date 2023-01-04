@@ -681,6 +681,7 @@ Q5C: For each concept, describe in your own words and provide an example using P
 - concatenation
 - arithmetic operators
 - comparison operators
+- list
 - dictionary
 - `if, else, elif` statements
 - `for` loop
@@ -703,6 +704,7 @@ Q5: For each concept, describe in your own words and provide an example using Py
 - concatenation
 - arithmetic operators
 - comparison operators
+- list
 - dictionary
 - `if, else, elif` statements
 - `for` loop
