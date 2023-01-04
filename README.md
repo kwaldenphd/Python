@@ -13,18 +13,19 @@ This lab provides an overview of foundational programming syntax in Python, spec
 
 # Table of Contents
 
-- [Input & Output](#input--output)
-- [Variables & Assignment](#variables--assignment)
-- [Basic Data Types](#basic-data-types)
-- [Concatenation](#concatenation)
+- [Variables & Assignment Operators](#variables--assignment-operators)
+- [Data Types](#data-types)
+- [Input & Output](#input--output-io)
 - [Operators](#operators)
-- [Other Data Structures](#other-data-structures)
+  * [Arithmetic Operators](#arithmetic-operators)
+  * [Comparison Operators](#comparison-operators)
+  * [Logical Operators](#logical-operators)
+- [Data Structures](#data-structures)
   * [Lists](#lists)
   * [Dictionaries](#dictionaries)
-  * [Additional Resources](#additional-resources)
-- [Control Flow & Conditional Execution](#control-flow--conditional-execution)
+- [Conditional Statements & Control Flow](#conditional-statements--control-flow)
   * [`if-then-else`](#if-then-else)
-  * [Loops](#loops)
+  * [Iteration](#iteration)
 - [Putting It All Together](#putting-it-all-together)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
