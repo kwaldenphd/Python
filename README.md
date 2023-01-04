@@ -678,15 +678,15 @@ For more background on iteration & loops in Python: [Elements of Computing I "It
 
 # Putting it all together
 
-QXA: The last thing we'll do in this lab is make sure you're comfortable with a few core elements of Python syntax. For each component, you're asked to describe the concept in your own words and write an example of the concept using Python syntax.
+Q5A: The last thing we'll do in this lab is make sure you're comfortable with a few core elements of Python syntax. For each component, you're asked to describe the concept in your own words and write an example of the concept using Python syntax.
 
-QXB: These examples do not need to be overly complex.
+Q5B: These examples do not need to be overly complex.
   * Modifying example code provided in the lab is absolutely fine. 
   * Using things you wrote while working through the lab is absolutely fine. 
   * Consulting linked resources is fine (include a comment or note that mentions any resources you consulted beyond the lab procedure.
 
-QXC: For each concept, describe in your own words and provide an example using Python syntax. Use comments/narrative text to note each part of your answer.
-- `print()` statement
+Q5C: For each concept, describe in your own words and provide an example using Python syntax. Use comments/narrative text to note each part of your answer.
+- `I/O` (input and ouput, using `print()` and `input()`)
 - string variable
 - integer variable
 - concatenation
