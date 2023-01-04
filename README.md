@@ -9,28 +9,22 @@ This lab provides an overview of foundational programming syntax in Python, spec
 
 ## Acknowledgements
 
-[Click here](https://github.com/kwaldenphd/Python/blob/master/acknowledgements.md) for a full list of acknowledgements for this lab.
+[Click here](https://github.com/kwaldenphd/Python/blob/main/acknowledgements.md) for a full list of acknowledgements for this lab.
 
 # Table of Contents
 
-- [`print` statements](#print-statements)
-- [Variables](#variables)
-- [Data Types](#data-types)
-  * [Comments](#comments)
-  * [Numbers](#numbers)
-  * [Strings](#strings)
+- [Input & Output](#input--output)
+- [Variables & Assignment](#variables--assignment)
+- [Basic Data Types](#basic-data-types)
 - [Concatenation](#concatenation)
 - [Operators](#operators)
-  * [Arithmetic Operators](#arithmetic-operators)
-  * [Comparison Operators](#comparison-operators)
-  * [Logical Operators](#logical-operators)
+- [Other Data Structures](#other-data-structures)
+  * [Lists](#lists)
+  * [Dictionaries](#dictionaries)
   * [Additional Resources](#additional-resources)
-- [Lists](#lists)
-- [Dictionaries](#dictionaries)
-- [`if, else, elif` statements](#if-else-elif-statements)
-- [Loops](#loops)
-  * [`for` loops](#for-loops)
-  * [`while` loops](#while-loops)
+- [Control Flow & Conditional Execution](#control-flow--conditional-execution)
+  * [`if-then-else`](#if-then-else)
+  * [Loops](#loops)
 - [Putting It All Together](#putting-it-all-together)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
@@ -41,83 +35,108 @@ This lab provides an overview of foundational programming syntax in Python, spec
 Lab notebook template:
 - [Jupyter Notebook](https://colab.research.google.com/drive/14Zpi8TabYz-AzqbJZkeK14lhD1i_spze?usp=sharing)
 
-# `print` statements
+# Comments
 
-For each of these examples, copy/paste or retype the code to run each mini program (and learn more about Python's functionality and documentation). Experiment, adapt, or modify these samples as you work through the lab procedure.
+Comments mark instructions or information in the code that will not run as part of the program. Comments are useful for testing, documenting, and describing what your code is doing. 
 
-1. Your first program will contain a single Python statement. Enter the following statement into a code cell.
-
-<blockquote>Watch out for quotation marks!</blockquote>
-
-```python
-print ("Welcome to the wild world of computer programming!")
-```
-
-2. Run the code cell to see the `print()` statement output.
-
-3. The `print()` function will output the value passed to it, in this case a string of characters (letters).
-
-4. You can modify the characters or symbols in the quotation marks to print other values.
-
-# Variables
-
-5. Next, we're going to assign our first variable.
-
-6. In Python, a variable is a placeholder for a piece of information. 
+In Python, single line comments begin with a pound `#` symbol and multi-line comments are marked by three sets of double quotation marks `"""`.
 
 ```Python
-# assign "hello world" message to hello variable
-hello = "Hello World"
+# This is an example of a single line comment in Python
 
-# print hello variable
-print(hello)
+"""
+This is an example of a multi-line comment in Python
+"""
+```
+ 
+For more on comments in Python:
+- [W3Schools, Python Comments](https://www.w3schools.com/python/python_comments.asp)
+
+#  Variables & Assignment Operators
+
+In most programming languages, variables work as "containers for storing data values" ([W3Schools, Python Variables](https://www.w3schools.com/python/python_variables.asp))
+
+We create a variable by assigning a value to that variable name using an **assignment operator**.
+
+"An assignment statement sets and/or re-sets the value stored in the storage location(s) denoted by a variable name; in other words, it copies a value into the variable...The assignment operator has two operands. The one to the left of the operator is usually an identifier name for a variable. The one to the right of the operator is a value" (Kenneth Leroy Busbee and Dave Braunschweig, "[Assignment](https://press.rebus.community/programmingfundamentals/chapter/assignment/)" in *Programming Fundamentals*)
+
+```
+[identifier] [assignment symbol] [value]
 ```
 
-7. Run this program to see the `print()` statement output.
+In Python, the equals sign `=` is the assignment symbol. The underlying syntax for creating a variable in Python using an assignment statement:
 
-8. In this example, the `"Hello World"` string of characters is assigned to a variable named `hello`.
+```Python
+# general syntax
+identifier = value
 
-9. You can choose variable names, as long as they meet a few conditions...
-  * Don't include spaces
-  * No special characters
-  * Don't begin with a number
-  * Aren't words that are also commands in Python (for example, `print` is an instruction and can't be a variable name)
-  
-10. For more on variables in Python: https://www.w3schools.com/python/python_variables.asp
-  
+# simple variable example
+x = 7
+
+# composite variable example
+y = 5 + 7
+```
+
+Python has a few restrictions and best practices around variable identifiers or names:
+
+#1- They have to start with a letter character or an underscore (no symbols or numeric characters)
+
+```Python
+# example of a valid identifier
+x = 7
+
+# example of an invalid identifier
+$x = 7
+```
+
+#2: Terms that have other meaning or function in Python can't be used as variable identifiers. For example the name of a built-in function (`type`) can't be used as a variable identifier.
+
+Reserved keywords in Python include: `and, except, lambda, with, as, finally, nonlocal, while, assert, fale, None, yield, break, for, not, class, from, or, continue, global, pass, def, if, raise, del, import, return, elif, in, True, else, is, try`
+
+#3: Best practice is any programming language is to use meaningful variable identifiers. Just calling something `x` or `y` won't be particularly helpful to someone else reading or interacting with your code. That said, overly-complex variable identifiers are prone to user error.
+
+We can show the value for a variable using Python's `print()` function.
+
+```Python
+# assignment statement
+x = 7
+
+# show variable value
+print(x)
+```
+
+We can also show a variable's data type using the `type()` function.
+
+```Python
+# assignment statement
+y = "Hello world!"
+
+# show type
+type(y)
+```
+
 <blockquote>Q1: In your own words, explain the difference between the print(hello) command we just used and print(“hello”).</blockquote>
+
+For more background on variables & assignment operators: [Elements of Computing I "Python Intro" lab](https://github.com/kwaldenphd/python-intro)
 
 # Data Types
 
-11. Python includes a number of different data types, which can be stored as variables.
+Commonly-used data types (with Python examples) include:
 
-12. We'll do more with variables later, but for now...
-
-## Comments
-
-13. We can add comments to our code to include information about what is happening in the program.
-
-14. In Python, lines that are comments begin with the `#` symbol.
-
-15. Going back to a previous `print()` statement example:
-
-```Python
-# assign "hello world" message to hello variable
-hello = "Hello World"
-
-# print hello variable
-print(hello)
-```
-
-16. We see comments in action- lines that begin with `#` that are part of the program but not instructions or commands.
-
-17. To put that another way, comments are for human users, not the machine.
-
-18. For more on comments in Python: https://www.w3schools.com/python/python_comments.asp
+<table><tr><th>Name</th><th>Python Syntax</th><th>Example</th><th>Description</th></tr>
+  <tr><td>String</td><td><code>str()</code><td><code>"Hello World!"</code></td><td>String of characters</td></tr>
+  <tr><td>Integer</td><td><code>int()</code><td><code>7</code></td><td>Whole number</td></tr>
+  <tr><td>Float</td><td><code>float()</code><td><code>1.5</code></td><td>Decimal number, or number with floating point values</td></tr>
+  <tr><td>Boolean</td><td><code>bool()</code><td><code>True</code></td><td>Two-state system that typically represents true/false values</td></tr>
+  <tr><td>Nothing/Null/NoneType</td><td><code>NoneType</code><td><code>None</code></td><td>No value</td></tr> 
+  </table>
+  
+For more on data types in Python:
+- [W3Schools, Python Data Types](https://www.w3schools.com/python/python_datatypes.asp)
 
 ## Numbers
 
-19. An integer is a whole number that does not include any decimal (or fractional) values. A float data type includes decimal (or fractional) values.
+An integer is a whole number that does not include any decimal (or fractional) values. A float data type includes decimal (or fractional) values.
 
 ```python
 # printing an integer
@@ -147,15 +166,9 @@ type(number)
 print(number)
 ```
 
-<blockquote>It may seem odd at first, but in Python, the "equals sign" here does not denote equality. Rather, it is an instruction telling Python to assign the value on its right into the variable on its left.</blockquote>
-
-20. For more on numbers in Python: https://www.w3schools.com/python/python_numbers.asp
-
 ## Strings
 
-21. A string is a sequence of characters (letters, numbers, symbols, etc.)
-
-22. We can assign strings to a variable, or store them as a variable.
+A string is a sequence of characters (letters, numbers, symbols, etc.) We can assign strings to a variable (i.e. store them as a variable).
 
 ```python
 # assign string to variable
@@ -168,359 +181,265 @@ type(s)
 print(s)
 ```
 
-23. For more on strings in Python: https://www.w3schools.com/python/python_strings.asp
+For more background on basic data types in Python: [Elements of Computing I "Python Intro" lab](https://github.com/kwaldenphd/python-intro#data-types)
 
-# Concatenation
+# Input & Output (I/O)
 
-24. In Python, we can add or join strings using a concept called concatenation.
+In programming languages and computing more broadly, `I/O` stands for `Input` and `Output`. Programming languages can take a variety of inputs (user-provided values, data, files, etc) and return outputs in a variety of formats (data stored in memory, output that shows up in the console, newly-created or -modified files, etc).
 
-25. Specifically we can use the `+` symbol to connect two strings.
+We've already seen `I/O` in action in Python via `print()` statements. One way Python accepts input is via the `input()` function, which accepts a user input and assigns that to a variable.
 
-26. Let's look at an example using first and last names:
-
-```Python
-# assign first name to variable
-firstName = "Katherine"
-
-# assign last name to variable
-lastName = "Walden"
-
-# use concatenation to create full name
-print(firstName + lastName)
-```
-
-27. We notice the last program's output doesn't include a space between first and last name.
-
-28. We can address this issue using...concatenation.
+A sample program that asks a user to enter their name:
 
 ```Python
-# assign first name to variable
-firstName = "Katherine"
+# initial prompt
+print("Enter your name: ")
 
-# assign last name to variable
-lastName = "Walden"
+# input function
+name = input()
 
-# use concatenation to create full name with space between strings
-print(firstName + " " + lastName)
+# output statement
+print("Hello, " + name)
 ```
 
-29. We could also use concatenation to create a new `fullName` variable.
+We can modify that program to include the initial prompt as part of the `input()` statement.
 
 ```Python
-# assign first name to variable
-firstName = "Katherine"
+# initial prompt with input function
+name = input("Enter your name: ")
 
-# assign last name to variable
-lastName = "Walden"
-
-# use concatenation to create full name and assign to variable
-fullName = firstName + " " + lastName
-
-# pring fullName variable
-print(fullName)
+# output
+print("Hello, " + name)
 ```
 
-30. For more on concatenation: https://www.w3schools.com/python/python_strings_concatenate.asp
+NOTE: The default data type for a variable created using the `input()` function is a string object.
+
+For more background on I/O in Python: [Elements of Computing I "Python Intro" lab](https://github.com/kwaldenphd/python-intro#input--output-io)
 
 # Operators
 
-31. Python includes a few different types of operators that can be used with values and variables.
-
-<table>
- <tr><td>Operator Type</td>
- <td>Example</td>
- <td>Description</td>
- </tr>
- <tr><td>Arithmetic operators</td>
- <td><code>+, -, *, /</code></td>
- <td>Used to perform arithmetic operations or calculations</td>
- </tr>
- <tr><td>Assignment operators</td>
- <td><code>=</code></td>
- <td>Used to assign values to variables</td>
- </tr>
- <tr><td>Comparison operators</td>
- <td><code>==, !=, >, <</code></td>
- <td>Used to compare two values</td>
- </tr>
- <tr><td>Logical operators</td>
- <td><code>and, or, not</code></td>
- <td>Used to combine conditional statements</td>
- </tr>
-</table>
-
 ## Arithmetic Operators
 
-32. A few standard operators we can use in Python to perform arithmetic operations.
-- `+` (plus, sum)
-- `-` (minus, subtraction)
-- `*` (times, multiplication)
-- `//` (divide, integer division)
-- `/` (divide, float division)
-- `%` (modulo operator, used to return/retrieve remainder after division)
-- `**` (exponent)
+Most programming languages allow you to perform arithmetic operations and mathematical calculations using **arithmetic operators**. Common arithmetic operations (with Python examples) include:
 
-33. Python follows the PEDMAS order of operations. When in doubt, use parenthesis!
+<table><tr><th>Name</th><th>Python Syntax</th><th>Python Example</th><th>Description</th></tr>
+  <tr><td>Addition</td><td><code>+</code><td><code>5 + 6</code></td><td>Adds values</td></tr>
+  <tr><td>Subtraction</td><td><code>-</code><td><code>5 - 6</code></td><td>Subtracts values</td></tr>
+  <tr><td>Multiplication</td><td><code>*</code><td><code>5 * 6</code></td><td>Multiples values</td></tr>
+  <tr><td>Integer division</td><td><code>//</code><td><code>5 // 6</code></td><td>Divides values, integers (whole numbers)</td></tr> 
+  <tr><td>Float division</td><td><code>/</code><td><code>5 / 6</code></td><td>Divides values, floating point numbers (decimal values)</td></tr>
+  <tr><td>Modulo</td><td><code>%</code><td><code>5 % 6</code></td><td>Returns or retrieves remainder (whole number) from division operation</td></tr>  
+  <tr><td>Exponent</td><td><code>**</code><td><code>5 ** 6</code></td><td>Calculates exponent</td></tr>
+  </table>
+  
+For more on arithmetic operators in Python:
+- [W3Schools, Python Arithmetic Operators](https://www.w3schools.com/python/gloss_python_arithmetic_operators.asp)
 
-<blockquote>PEDMAS order of operations: parenthesis, exponents, multiplication, division, addition, subtraction</blockquote>
+We can run arithmetic operations directly in the console or in a script.
 
 ```Python
-# a few examples of arithmetic operators in action
-print(2+3)
-print(2-3)
-print(2*3)
-print(2/3)
+# sample arithmetic operation
+5 + 7
 ```
+
+But we can also assign the output of an arithmetic operation to a variable.
+
+```Python
+# sample arithmetic operation where output is assigned to variable
+x = 5 + 7
+
+# show variable value
+print(x)
+```
+
+<p align="center"><img src="https://github.com/kwaldenphd/python-intro/blob/main/images/PEDMAS.png?raw=true" width="500"></p>
+
+Python follows the PEDMAS order of operations: parenthesis, exponents, multiplication, division, addition, subtraction. 
+- *When in doubt, use parenthesis!*
+
+For more background on arithmetic operators: [Elements of Computing I "Python Intro" lab](https://github.com/kwaldenphd/python-intro#arithmetic-operators)
 
 ## Comparison Operators
 
-34. Python's comparison operators will return a value of `TRUE` or `FALSE` based on whether the comparison is true or false.
+Relational operators, also called comparison operators, allow us to run `True/False` tests on specific conditions, focusing on the relationship(s) between two or more values.
 
-<table>
- <tr><td>Operator</td>
- <td>Name</td>
- <td>Example</td>
- </tr>
- <tr><td><code>==</code></td>
- <td>Equal</td>
- <td><code>x == y</code></td>
- </tr>
- <tr><td><code>!=</code></td>
- <td>Not equal</td>
- <td><code>x != y</code></td>
- </tr>
- <tr><td><code>></code></td>
- <td>Greater than</td>
- <td><code>x > y</code</td>
-  </tr>
-  <tr><td><code><</code></td>
-   <td>Less than</td>
-   <td><code>x < y</code</td>
-  </tr>
-  <tr><td><code>>=</code></td>
-   <td>Greater than or equal to</td>
-   <td><code>x >= y</code></td>
-  </tr>
-  <tr><td><code><=</code></td>
-   <td>Less than or equal to</td>
-   <td><code>x <= y</code></td>
-  </tr>
+Relational operators or comparison operators in Python: 
+
+<table><tr><th>Name</th><th>Syntax</th><th>Example</th><th>Description</th></tr>
+  <tr><td>Equal</td><td><code>==</code><td><code>x == y</code></td><td>Tests if values are equal</td></tr>
+  <tr><td>Not equal</td><td><code>!=</code><td><code>x != y</code></td><td>Tests if values are not equal</td></tr>
+  <tr><td>Greater than</td><td><code>></code><td><code>x > y</code></td><td>Tests is a value is greater than another</td></tr>
+  <tr><td>Less than</td><td><code><</code><td><code>x < y</code></td><td>Tests is a value is less than another</td></tr> 
+  <tr><td>Greater than or equal to</td><td><code>>=</code><td><code>x >= y</code></td><td>Tests if a value is greater than or equal to another</td></tr>
+  <tr><td>Less than or equal to</td><td><code><=</code><td><code>x <= y</code></td><td>Tests if a value is less than or equal to another</td></tr>  
   </table>
-  
-35. These comparison operators compare two values and return `True` or `False`.
+    
+For more on comparison operators in Python: [W3Schools, Python Comparison Operators](https://www.w3schools.com/python/gloss_python_comparison_operators.asp)
 
-36. A few examples of comparison operators in Python:
+- "In mathematics and mathematical logic, Boolean algebra is the branch of algebra in which the values of the variables are the truth values true and false, usually denoted 1 and 0" ([Wikipedia](https://en.wikipedia.org/wiki/Boolean_algebra))
 
-```python
-# assign integer to variable
-x=4
+We've talked previously about the Boolean data type. The underlying `True`/`False` logic lets us test for specific conditions and then specify how our code will execute based on the truth value for those conditional statements.
 
-# show operator type
-print(type(x == 4))
+- "You can evaluate any expression in Python, and get one of two answers, `True` or `False`. When you compare two values, the expression is evaluated and Python returns the Boolean answer" ([W3Schools, Python Booleans](https://www.w3schools.com/python/python_booleans.asp))
 
-# output true/false based on comparison statement
-print(x==4)
-```
-
-```python
-# in some cases, operators can be chained or combined
-
-# will output true because comparison is true
-print(1 < 2 < 3)
-
-# will output false because comparison is false
-print(10 < 2 < 3)
-```
-
-```python
-# assigning integer values to variables
-x = 3
-y = 18
-z = 10
-
-# comparing variables (will return true/false based on whether the comparison is true)
-print (x < y < z)
-```
-
-37. For more on comparison operators in Python: https://www.w3schools.com/python/gloss_python_comparison_operators.asp
-
-## Logical Operators
-
-38. We can also combine comparison operators using Python's logical operators.
-
-<table>
- <tr><td>Operator</td>
- <td>Description</td>
- <td>Example</td>
- </tr>
- <tr><td><code>and</code></td>
- <td>Returns <code>True</code> if both statements are true</td>
- <td><code> x < 5 and x < 10</code></td>
- </tr>
- <tr><td><code>or</code></td>
- <td>Returns <code>True</code> if one of the statements is true</td>
- <td><code>x < 5 or x < 4</code></td>
- </tr>
- <tr><td><code>not</code></td>
- <td>Reverses the result; returns <code>False</code> if the result is <code>True</code></td>
- <td><code>not(x < 5 and X < 10)</code></td>
- </tr>
- </table
-
-## Additional Resources
-
-39. To learn more about operators in Python:
-  * [Arithmetic operators](https://www.w3schools.com/python/gloss_python_arithmetic_operators.asp)
-  * [Comparison operators](https://www.w3schools.com/python/gloss_python_comparison_operators.asp)
-  * [Logical operators](https://www.w3schools.com/python/python_operators.asp)
-
-# Lists
-
-40. Python allows us to store information in a few different ways. 
-
-41. Let’s start with lists. 
-  * Lists are an ordered collection of items
-  * They can be numbers or strings. 
-  * The individual values in a list are called elements or items
-  * Lists are typically assigned to a variable
-  * Items in a list are contained within `[ ]` and the individual items are separated by a comma (`,`). 
-
-## Lists of Strings
-
-42. Write a list of a few of your favorite things.
+### Boolean Logic & Comparison Operators
+   
+We can use comparison operators with a `print()` statement to test whether a particular statement is `True` or `False`.
+   
+A couple Python examples:
 
 ```Python
-cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-```
-
-43. We can print this list with a print function `print(cookies)`, but Python returns a representation of the list, just as we entered it.
-`['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']`
-
-44. This isn’t particularly useful by itself; however, we can use the position of each item (called the *index*) to perform different functions.
-
-45. Add a print function calling a specific item on your list.
-```Python
-print(cookies[0])
-```
-
-46. This command returns the first item on my list. This is the item in the `0` position on my list.
-
-```Python
-chocolate chip
-```
-
-47. Items in a list are indexed with a number, **beginning with 0 NOT 1.**
-
-48. A `print` command that outputs the last item on my list of four items would look like this.
-```Python
-cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-print(cookies[3])
-```
-
-49. We can also work backwards on our list using negative numbers. For example, to call the last item on the list we could also use the index value `-1`.
-
-```Python
-cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-print(cookies[-1])
-```
-
-50. To return the second to last item, we could use -2. For the third to last -3, etc. etc.
-
-51. We can concatenate our list items in strings.
-
-```Python
-cookies = ['chocolate chip', 'snickerdoodle', 'peanut butter', 'sugar']
-print("My favorite cookie to bake is " + cookies[1] + ".")
-```
-
-52. Which outputs `My favorite cookie to bake is snickerdoodle.`
-
-53. We can  use `append` to add values to a list
-
-```Python
-# create empty list and assign to variable
-myPets = []
-
-# add one string to list
-myPets.append('Christy Matthewson')
-
-# add another string to list
-myPets.append('Smoky Jo Wood')
-
-# add a third string to list
-myPets.append('Sandy Koufax')
-
-# show list
-print(my_pets)
-```
-
-54. In this block of code, we started with an empty list `[]`. Then the next lines with `append` added new items to the list.
-
-## Lists of Numbers
-
-55. We can also create a list of numbers in Python
-
-```Python
-# create list with numbers and assign to variable
-num_list = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
-
-# show first number in list
-num_list[0]
-
-# show last number in list
-num_list[-1]
-
-# show full list
-num_list
-```
-
-<blockquote>Q2: Create your own list of numbers or strings, using the examples in the lab as a starting point. What is the number position for each of the items in your list? How would you return the value of the first item? How would you return the value of the last item?</blockquote>
-
-# Dictionaries
-
-<p align="center"><a href="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_1.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_1.png?raw=true" /></a></p>
-
-<p align="center"><a href="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_2.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/python-dictionaries-sets/blob/master/figures/Dic_2.png?raw=true" /></a></p>
-
-56. A dictionary is a mapping between a set of indices (keys) and a set of values. 
-
-57. Each key maps to a value. 
-
-58.  The association of a key and a value is called a key-value pair.
-
-## Creating a Dictionary
-
-59. We have two options for creating a dictionary.
-
-60. We can use the `dict()` function or the `{}` syntax.
-
-61. Examples for each:
-
-```Python
-# creating empty dictionary using dict()
-english_to_french = dict({})
-
-# check variable type
-type(english_to_french)
-
-# create dictionary this time with key-value pairs
-english_to_french = dict({
-  'one': 'un',
-  'two': 'deux',
-  'three': 'trois',
-  'four': 'quatre',
-  'five': 'cinq'
-})
+print(4 == 5) # returns false
+print(6 < 10) # returns true
 ```
 
 ```Python
-# create empty dictionary using curly brackets {}
-english_to_french = {}
+# comparison operator using variables
+x = 5
+y = 6
 
-# check variable type
-type(english_to_french)
+print(x > y) # returns false
+```
 
-# create dictionary this time with key-value pairs
+### Comparison Operators & String Objects
+
+We can probably make intuitive sense of how these comparison operators would work for numeric values. But what about text characters or string objects?
+   
+Most programming languages treat the 26 characters in the English-language alphabet (`a-z`) as sequential values, where `a` is less than `b`, which is less than `c`, etc.
+
+When working with string objects that represent words or characters, comparison operators indicate positionality in the English-language alphabet.
+
+A few examples in Python:
+```
+print("apple" > "banana") # returns false
+
+print("Ohio State" > "Notre Dame") # returns true
+```   
+
+### Logical Operators
+
+We can also compare or relate multiple conditions using logical operators: `and`, `or`, `not`
+
+- "A logical operator is a symbol or word used to connect two or more expressions such that the value of the compound expression produced depends only on that of the original expressions and on the meaning of the operator. Common logical operators include AND, OR, and NOT." (Busbee and Braunschweig, "[Logical Operators](https://press.rebus.community/programmingfundamentals/chapter/logical-operators/)")                            
+
+For example, `5 < 6 and 6 < 7` evaluates whether `5 < 6` and `6 < 7` are true. This statement would return `True`.
+
+Another example: `5 < 6 or 6 > 7` evaluates whether `5 < 6` or `6 > 7` is true. This statement would return `True`.
+
+Logical operators in Python:
+    
+<table><tr><th>Name</th><th>Syntax</th><th>Example</th><th>Description</th></tr>
+  <tr><td>And</td><td><code>and</code><td><code>x == y and y != z</code></td><td>Returns <code>True</code> if both statements are true</td></tr>
+  <tr><td>Or</td><td><code>or</code><td><code>x != y or y == z</code></td><td>Returns <code>True</code> if one of the statements is true</td></tr>
+  <tr><td>Not</td><td><code>not</code><td><code>not(x == y and y != z)</code></td><td>Reverses the result, returns <code>False</code> if the result is true</td></tr>
+  </table>
+    
+```Python
+# example using logical operators
+print(5 < 6 and 6 < 7) # returns true because both statements are true
+
+print(5 < 6 or 6 > 7) # returns true because at least one statement is true
+
+print(not(5 < 6 and 6 < 7)) # returns false, inverse of initial true
+```
+
+For more background on comparison/relational and logical operators in Python: [Elements of Computing I "Comparison Operators & Conditional Statements" lab](https://github.com/kwaldenphd/python-conditional-statements)
+
+# Data Structures
+
+<p align="center"><img src="https://github.com/kwaldenphd/python-data-structures/blob/main/images/Python_Data_Structures.png?raw=true" width="1000"></p>
+
+In addition to what are called "primitive" data types in Python (`integer`, `float`, `string`, and `Boolean`), most programming languages also include or support more complex data structures or more complex ways of storing and accessing information. In Python, those one-dimensional (or linear) data structures include `strings`, `lists`, `tuples`, `sets`, and `dictionaries`.
+
+<table><tr><th>Name</th><th>Syntax</th><th>Example</th><th>Description</th></tr>
+  <tr><td>String</td><td><code>str(), ""</code><td><code>"Hello world!"</code></td><td>Sequence of characters</td></tr>
+  <tr><td>List</td><td><code>list(), []</code><td><code>["apple", "banana", "pear"], [1, 3, 5, 7]</code></td><td>Sequence of objects/values</td></tr>
+  <tr><td>Dictionary</td><td><code>dict(), {}</code><td><code>{'first_name': 'Knute', 'last_name':'Rockne', 'class':'1918'}</code></td><td>Key-value pairs</td></tr>
+  <tr><td>Set</td><td><code>set(), {}</code><td><code>{"apple", "banana", "pear"}, {1, 3, 5, 7}</code></td><td>Unordered group of unique values</td></tr> 
+  <tr><td>Tuple</td><td><code>tuple(), ()</code><td><code>("apple", "banana", "pear"), (1, 3, 5, 7)</code></td><td>Ordered group of values that can include duplicates</td></tr>
+  </table>
+
+## Lists
+
+<p align="center"><img src="https://github.com/kwaldenphd/python-data-structures/blob/main/images/One_Dimensional_Array.jpg?raw=true" width="500"></p>
+
+"In computer science, an array is a data structure consisting of a collection of elements (values or variables), each identified by at least one array index or key...The simplest type of data structure is a linear array, also called one-dimensional array" ([Wikipedia, "Array (data structure)](https://en.wikipedia.org/wiki/Array_(data_structure))")
+
+We can think of arrays as one-dimensional, linear data structures made up of a collection of items. As the definitions note, we can access specific elements in the array by using an index or key value. 
+
+"In Python, the built-in array data structure is a list" (Busbee and Braunschweig, "[Arrays and Lists](https://press.rebus.community/programmingfundamentals/chapter/arrays-and-lists/)"). Python also includes a few other built-in array-like data structures, including `sets` and `tuples`. We'll come back to these later in this lab. We can also think of string objects, which are a sequence of characters, as a type of one-dimiensional, linear array.
+
+These **one-dimensional or linear array structures** have a few key properties that differentiate the structures and shape how we can interact with or manipulate them in a programming environment.
+
+Those properties include:
+- Mutable: Can values in the structure be changed once it has been created or assigned to a variable?
+- Order: Does the order of values in the structure have meaning/significance, or is order not significant?
+- Indexing/Slicing: Can values in the structure be accessed using their position or index? Can we isolate values in the structure using their position?
+- Duplicates: Does the structure allow duplicate values?
+
+How these properties show up for Python's built-in data structures:
+
+<p align="center"><img src="https://github.com/kwaldenphd/python-data-structures/blob/main/images/Python_Array_Comparison.png?raw=true" width="500"></p>
+
+Each structure has its own specific vocabulary and syntax, but some common operations we can use with these structures:
+- Getting number of values in the structure (using the `len()` function)
+- For structures that are mutable, adding, modifying, and removing values
+- Sorting values in the structure
+- Testing for membership, if specific value(s) are present in the structure (using the `in` and `not in` operators)
+- For structures that are ordered or indexed, accessing elements using their position
+
+An example that uses a list of strings:
+
+```Python
+# list of string objects
+fruits = ["apple", "banana", "blueberry", "cherry"]
+
+# check data type
+type(fruits)
+```
+
+We can determine the number of elements in the list using the `len()` function.
+
+```Python
+len(fruits)
+```
+
+Remember Python starts at `0` and counts left-to-right. We can access specific values using their position.
+
+```Python
+# access first value 
+fruits[0]
+
+# access second value
+fruits[1]
+
+# access third value
+fruits[2]
+```
+
+Python lists also support negative indexing- we can use negative index values to count right-to-left. 
+- NOTE: Negative indexing starts counting at `-1`
+
+```Python
+# access last value
+fruits[-1]
+
+# access next to last value
+fruits[-2]
+```
+
+## Dictionaries
+
+<p align="center"><img src="https://github.com/kwaldenphd/python-data-structures/blob/main/images/Associative_Arrays.png?raw=true" width="500"></p>
+
+The other primary type of array we can encounter is an **associative array**, "an abstract data type that stores a collection of (key, value) pairs, such that each possible key appears at most once in the collection" ([Wikpedia, Associative Array](https://en.wikipedia.org/wiki/Associative_array))
+
+Python stores associate arrays using the **dictionary** data structure. Python dictionaries consist of key-value pairs, where the key is working as an identifier or index.
+
+A preliminary example in Python:
+
+```Python
+# create dictionary
 english_to_french = {
   'one': 'un',
   'two': 'deux',
@@ -528,282 +447,186 @@ english_to_french = {
   'four': 'quatre',
   'five': 'cinq'
 }
+
+# check data type
+type(english_to_french)
 ```
 
-## Interacting With A Dictionary
-
-62. Now that we have a dictionary, we can start to interact with values in the dictionary.
+We can use the index operator (`[]`) and key values to select specific values in the dictionary.
 
 ```Python
-print(english_to_french)
-```
-
-63. Notice that when we print the dictionary, the key-value pairs are **unsorted** and do not appear in the order in which we added them.
-
-64. Due to the nature of the dictionary data structure, we cannot make any assumptions about the order in which items appear in the dictionary.
-
-65. We can use the index operator to read the value for a particular key.
-
-```Python
-# access value for 'one' key
+# access value for one key
 english_to_french['one']
-```
 
-66. If we try to access the value for a key that does not exist, Python will return a KeyError.
+# access value for five key
+english_to_french['five']
 
-```Python
+# access value for asdf key
 english_to_french['asdf']
 ```
 
-67. We can use the `.keys()` method to get a list of all keys in the dictionary.
+The last line will return a `KeyError` because `asdf` is not a key in this dictionary.
+
+We can use the `.keys()` and `.values()` methods to output all of the keys or values in a dictionary.
 
 ```Python
+# output keys
 print(english_to_french.keys())
-```
 
-68. We can use the `.values()` method to get a list of all the values in the dictionary.
-
-```Python
+# output values
 print(english_to_french.values())
 ```
 
-69. For more on Python dictionaries: https://www.w3schools.com/python/python_dictionaries.asp
 
-# `if, else, elif` statements
+For more background on arrays and data structures in Python: [Elements of Computing I "Data Structures in Python" lab](https://github.com/kwaldenphd/python-data-structures)
 
-70. We can use conditional statements to change the behavior of a program based on whether specific conditions are or are not met.
 
-71. To put this another way, conditional statements check boolean expressions (i.e. conditions), and change the behavior of the program accordingly.
+# Conditional Statements & Control Flow
 
-## Operator Review
+## `if-then-else`
 
-72. Operators used to compare two objects:
-- `==`    equal to
-- `==`    equal to
-- `!=`    not equal to
-- `>=`    greater than or equal to
-- `>`     greater than
-- `<`     less than
-- `<=`    less than or equal to
+From Busbee and Braunschweig's "[Selection Control Structures](https://press.rebus.community/programmingfundamentals/chapter/selection-control-structures/)" from *Programming Fundamentals*:
+- "The basic attribute of a selection control structure is to be able to select between two or more alternate paths. This is described as either two-way selection or multi-way selection. A question using Boolean concepts usually controls which path is selected. All of the paths from a selection control structure join back up at the end of the control structure, before moving on to the next lines of code in a program."
+- "The if then else control structure is a two-way selection"
 
-73. Boolean logical operators:
-- `and`   both must be true
-- `or`    one or both must be true
-- `not`   reverses the truth value
-
-74. We can use and test for conditions in a few key ways, specifically through `if` statements and `loops`.
-
-75. More on loops later, but for now...
-
-76. Python's comparison operators serve as conditional tests that return a True or False.
+In Python, this logic is expressed using the `if`, `else`, and `elif` syntax. From W3Schols, "[Python Conditions](https://www.w3schools.com/python/python_conditions.asp)":
+- "An 'if statement' is written by using the `if` keyword"
+- "The `elif` keyword is Python's way of saying 'if the previous conditions were not true, then try this condition'"
+- "The `else` keyword catches anything which isn't caught by the preceding conditions"
 
 ```Python
-# set the variable number to 10
-number = 10
+# assign variables
+x = 5
+y = 7
 
-# the following statements will return true or false
+# if statement
+if x > y:
+    print("The value of x is greater than the value of y")
 
-# EQUAL !==
-print(number == 15)
-print(number ==10)
+# else if statement
+elif x == y:
+    print("The value of x is equal to the value of y")
 
-# GREATER THAN >
-print(number > 10)
-print(number > 4)
-
-# LESS THAN <
-print(number < 10)
-print(number < 15)
-
-# GREATER THAN OR EQUAL TO >=
-print(number >= 15)
-print(number >= 10)
-
-# LESS THAN OR EQUAL TO <=
-print(number <= 4)
-print(number <= 10)
-
-#TESTING MULTIPLE CONDITIONS
-
-#AND
-print(number > 1 and number <20)
-
-#OR
-print(number ==10 or number ==20)
-```
-
-## `if` Statements
-
-77. `if` statements use the `if` keyword to test if a condition is true.
-
-78. `if` statements are conditional, meaning that there is a test to determine if a statement is true or false, and then the computer takes some defined action.
-
-79. The basic syntax for an `if` statement:
-
-```Python
-if condition:
- statement(s)
-```
-
-80. The `if` statement tests if a particular condition is true. And if so, executes the command nested under the initial `if` statement.
-
-81. To illustrate that another way:
-
-```Python
-if this condition is true:
- then do this thing
-```
-
-82. A couple things to note about this syntax:
-- A colon always follows the first line of an `if` statement
-- The code that will run if the statement is true is nested or intented beneath the `if` keyword
-
-83. For example, let's say we have a Python program where the variable `n` equals `0`.
-
-84. We want to write a program that, if `n` equals `0`, prints the message `n is zero`.
-
-85. We can do that using an `if` statement.
-
-```Python
-n = 0
-
-if n == 0:
- print('n is zero')
-```
-
-## `if-else` Statements
-
-86. Suppose we want to print one message when the condition (`number > 0`) is true, and a different message when the condition is false. 
-
-87. We can do that by using an `else` clause along with an `if` keyword.
-
-88. The basic syntax for `if-else`:
-
-```Python
-if condition:
- statement(s)
+# else statement
 else:
- statement(s)
+    print("The value of x is less than the value of y")
 ```
 
-89. The statement indented beneath the `if` keyword will only run when the `if` condition is true.
+To frame this another way:
+- `if` introduces and evaluates an initial condition. The lines of code indented under `if` will only run when the `if` statement is `True`
+- `else-if` or `elif` introduces and evaluates another condition. The lines of code indented under `elif` will only run when the `elif` statement is `True`
+- `else` **does not** introduce a new condition. The lines of code indented under `else` will only run when the preceeding `if`/`elif` statements **are not** true 
 
-90. In an `if-else` statement, the statement indented beneath `else` will only run if the `if` condition is not true (or false).
+For more background on `if-then-else` logic in Python: [Elements of Computing I "Comparison Operators & Conditional Statements" lab](https://github.com/kwaldenphd/python-conditional-statements)
 
-91. An example that illustrates this logic:
+## Iteration
+
+But let's review the definition of iteration as a control structure. From Busbee and Braunschweig's "[Iteration Control Structures](https://press.rebus.community/programmingfundamentals/chapter/iteration-control-structures/)," in *Programming Fundamentals*:
+
+"In iteration control structures, a statement or block is executed until the program reaches a certain state, or operations have been applied to every element of a collection. This is usually expressed with keywords such as `while`, `repeat`, `for`, or `do..until`. The basic attribute of an iteration control structure is to be able to repeat some lines of code. The visual display of iteration creates a circular loop pattern when flowcharted, thus the word 'loop' is associated with iteration control structures."
+
+Breaking down that definition:
+- Iteration (repetition of a process) is a type of control structure
+- In programming languages, iteration involves lines of code repeating until a condition is met of the end of a group of values has been reached.
+- Because iteration in this context involves a circular pattern, many object-oriented programming languages refer to these structures as `loops`
+
+The power of iteration as a control structure comes from a programming concept called `loops`.
+
+<p align="center"><img src="https://github.com/kwaldenphd/python-loops-iteration/blob/main/images/loop-comparison-diagram.png?raw=true" width="1000"></p>
+
+Most high-level programming languages support two main types of loops: event-controlled and count-controlled
+- **Event-controlled loops** test for an initial condition, and execution continues as long as the initial condition is `True`. How many times the loop will execute *is not known*.
+- **Count-controlled loops** (sometimes called counter-controlled loops) continue executing for a pre-determined number of times. The number of times the loop will execute is known because the loop is iterating through a collection of objects/values (i.e. a string or list), or the iteration when the initial condition will no longer be `True` is known.
+
+### `while`
+
+<p align="center"><img src="https://github.com/kwaldenphd/python-loops-iteration/blob/main/images/while-loop-diagram.png?raw=true" width="500"></p>
+
+In Python, event-controlled loops are written using a `while` statement and are called `while loop`. A `while` statement tests for an initial condition, and the lines of code indented under `while` run only when the initial condition is `True`.
+
+In each iteration through the `while` loop, Python will:
+- Evaluate the initial condition (which is a Boolean true/false expression)
+- If the condition is `False`, exit the loop and continue the program
+- If the condition is `True`, then execute other statements in the body of the loop and return to the beginning of the loop
+
+The basic syntax for a `while` loop:
 
 ```Python
-# ask user to enter a number
-number = input("Enter a number: ")
-
-# test if number is greater than zero
-if number > 0:
-  print ("That number is positive.")
-
-# if number is not greater than zero
-else:
-  print ("Definitely NOT positive.")
-
-# message that prints at end of program
-print ("This message prints every time.")
+# while loop sample syntax
+while condition:
+	statement(s)
 ```
 
-## `elif` statements
-
-92. We can also use the `elif` keyword along with the `if` keyword to introduce a new condition. 
-
-93. Python will test the `elif` condition if previous conditions are not true.
+To express this logic another way:
 
 ```Python
-# elif statement example
-
-# declares x variable
-x = 1
-
-# block of code that runs if x is less than 0
-if x < 0:
- print("x is less than 0")
-
-# block of code that runs if x equals zero
-elif x == 0:
- print("x is equal to 0")
-
-# block of code that runs if x is greater than 0
-else:
- print("x is greater than 0")
+# while loop sample syntax
+while THIS CONDITION IS TRUE:
+	DO THIS THING
 ```
+
+For example, let's look at a guessing game program that uses a `while` statement:
 
 ```Python
-# another elif example
+# correct answer
+secret = 7
 
-# assign a variable 
-a = 33
+# guess
+guess = int(input("Guess a number: "))
 
-# assign b variable 
-b = 33
+# while statement
+while guess != secret:
+  if guess > secret:
+    print("Your guess is too high. Better luck next time")
+    guess = int(input("Guess again. Enter another number: "))
+  else:
+    print("Your guess is too low. Better luck next time.")
+    guess = int(input("Guess again. Enter another number: "))
+  
 
-# conditional statement using if
-if b > 1:
- print("b is greater than a")
- 
-# conditional statment using elif to test, only when if statement is false
-elif a == b:
- print("a and b are equal")
+print("Congrats, you guessed the secret number!")
 ```
 
-94. For more information on `if, else, elif`: https://www.w3schools.com/python/python_conditions.asp
+This is an example of a `while` loop. Because the number of times the loop will execute is not known, this is an example of an event-controlled loop. That is, the loop will continue executing (looping) until the initial condition (`guess != secret`) is no longer true.
 
-# Loops
+### `for`
 
-95. Loop statements are a type of conditional statement that rely on the underlying logic of conditional execution.
+<p align="center"><img src="https://github.com/kwaldenphd/python-loops-iteration/blob/main/images/for-loop-diagram.png?raw=true" width="500"></p>
 
-96. In Python, loops repeatedly execute a series of tasks.
-- Key term: *loop(s), looping*
+In Python, count-controlled loops are written using a `for` statement and are called `for loop`. A `for loop` iterates over each value in a group of values- the lines of code nested under the initial statement run for each iteration.
 
-97. Each time through the body of a loop is called an iteration.
-- Key term: *iteration*
-
-98. An iteration can involve things like iterating through items in a list or testing if specific conditions are met, and then doing “something” as the result or endpoint for the loop.
-
-## `for` Loops
-
-99. `for` loops let us iterate through a definite set of objects.
-
-100. In each iteration through the `for` loop, Python will:
+`for` loops let us iterate through a definite set of objects. In each iteration through the `for` loop, Python will:
 - Extract one element from the dataset
 - Execute the body of the `for` loop using the item bound to the element
 - Go back to the first step
 - Keep iterating through the loop until reaching the end of the dataset
 
-101. The basic syntax in a `for` loop:
+The basic syntax in a `for` loop:
 
 ```Python
+# sample for loop syntax
 for item in dataset:
  statement(s)
 ```
 
-102. In this syntax, `item` is a placeholder for each element in `dataset`. 
-
-103. You can replace `item` with another word or letter character.
+In this syntax, `item` is a placeholder for each element in `dataset`. We can replace `item` with another word or letter character.
 
 ```Python
-for i in dataset
+# sample for loop syntax
+for i in dataset:
+	statement(s)
 ```
 
-104. In this syntax, `dataset` stands for the list of items we want Python to iterate over.
+In this syntax, `dataset` stands for the group of items we want Python to iterate over. That group of items could be a list, a list variable, string, string variable, etc. 
 
-105. That list of items could be a list variable, a list of numbers, a string of characters, etc.
-
-### `for` Loops and Lists of Numbers
-
-106. Let's say we have a list of numbers, and we want Python to iterate through each number in the list and print the number.
+Let's say we have a list of numbers, and we want Python to iterate through each number in the list and print the number.
 
 ```Python
 for i in [0, 1, 2, 3]:
  print(i)
 ```
 
-107. Alternatively, we could create a variable for our list of numbers.
+Alternatively, we could create a variable for our list of numbers.
 
 ```Python
 # create list of numbers
@@ -814,21 +637,15 @@ for i in number_list:
  print(i)
 ```
 
-108. The loop command steps through the list one value at a time. 
+The loop command steps through the list one value at a time. The loop continues until it reaches the end of the list. 
 
-109. The loop continues until it reaches the end of the list. 
-
-### `for` Loops and Strings
-
-110. We can also use a `for` loop to iterate over a list of strings.
-
-111. Let's say we have a list of pepper types.
+We can also use a `for` loop to iterate over a list of strings. Let's say we have a list of pepper types.
 
 ```Python
 peppers = ["bell", "poblano", "jalapeno", “banana”, “chile”, “cayenne”]
 ```
 
-112. We can use a `for` loop to iterate over each string in the list.
+We can use a `for` loop to iterate over each string in the list.
 
 ```Python
 peppers = ["bell", "poblano", "jalapeno", “banana”, “chile”, “cayenne”]
@@ -837,9 +654,7 @@ for x in peppers:
  print(x)
 ```
 
-113. We can also use a `for` loop to iterate through characters in a single string.
-
-114. Let's say we want to iterate over the characters in the string `elements`.
+We can also use a `for` loop to iterate through characters in a single string. Let's say we want to iterate over the characters in the string `elements`.
 
 ```Python
 for x in 'elements':
@@ -855,108 +670,7 @@ for x in string:
  print(x)
 ```
 
-115. Let's start combining `for` loops with some the other concepts we've covered.
-
-```Python
-#loops through a list of the members of the House Stark.
-
-characters = ['Arya', ' Benjen', 'Bran', 'Catelyn', 'Eddard', 'Rickon', 'Robb', 'Sansa']
-
-for character in characters:
-  print(character.title() + "Stark")
-```
-
-<blockquote>Note the use of the plural for the name of the list and the singular for the individual item is not required. We are just declaring variables here. We can use anything to name the individual items (e.g. for person in characters). All this does is set a new variable for the individual item. Standard convention is to use the plural and singular terms so that the person reading the code can interpret what it is doing.</blockquote>
-
-116. Remember the loop command steps through the list one value at a time. The loop continues until it reaches the end of the list. 
-
-117. In this case, for each item in the list called `“characters”` the program prints the value of each `“character”` in the list concatenated with the string `" Stark”`. 
-
-118. This produces the output:
-```
-Arya Stark
-Benjen Stark
-Bran Stark
-Catelyn Stark
-Eddard Stark
-Rickon Stark
-Robb Stark
-Sansa Stark
-```
-
-119. For more information on `for` loops: https://www.w3schools.com/python/python_for_loops.asp
-
-## `while` Loops
-
-120. Another way to modify the control flow of a program is to have it execute one or more statements repeatedly.
-
-121. A `while` loop will test for an initial condition and continue iterating through the loop until the condition is `False`.
-
-122. In each iteration through the `while` loop, Python will:
-- Evaluate the initial condition (which is a Boolean true/false expression)
-- If the condition is `False`, exit the loop and continue the program
-- If the condition is `True`, then execute other statements in the body of the loop and return to the beginning of the loop
-
-123. The basic syntax for a `while` loop:
-
-```Python
-while condition:
- statement(s)
-```
-
-124. To express this logic another way:
-
-```Python
-while THIS CONDITION IS TRUE
- DO THIS THING
-```
-
-### `while` Loop Examples
-
-#### `while` Loop Example A
-
-125. Let's look at a sample `while` loop that uses the `<` (less than) comparison operator.
-
-```Python
-n = 0
-
-while n < 10:
- print(n)
- n = n +1
-```
-
-126. To walk through what is happening in each line of this program...
-
-127. `n=0` assigns the value zero (0) to the variable `n`.
-
-128. `n < 10` is a conditional statement that will return `True` as long as `n` is less than `10`.
-
-129. So `while n < 10` sets up a `while` loop in which the body of the loop (the lines of code nested or indented beneath the first line of the loop) will run as long as the initial condition is `true`.
-
-130. The first line in the body of the loop `print(n)` prints the value of `n` for that iteration.
-
-131. The second line in the body of the loop `n = n+1` reassigns the value of `n` to be `n + 1`.
-
-132. After executing both lines in the body of the loop, the next iteration of the loop begins by evaluating the `n < 10` conditional statement.
-
-#### `while` Loop Example B
-
-133. Another example of a `while` loop.
-
-```Python
-# assign x variable
-x = 10
-
-# looping structure using greater than or equal to conditional statement
-while x >= 0:
- print(x)
- x = x-1
-
-# message to print once loop has completed
-print("I'm done!")
-```
-
-134. For more information on `while` loops: https://www.w3schools.com/python/python_while_loops.asp
+For more background on iteration & loops in Python: [Elements of Computing I "Iteration & Loops" lab](https://github.com/kwaldenphd/python-loops-iteration)
 
 <blockquote>Q3: In your own words, what is iteration?</blockquote>
 
@@ -964,16 +678,14 @@ print("I'm done!")
 
 # Putting it all together
 
-135. The last thing we'll do in this lab is make sure you're comfortable with a few core elements of Python syntax.
+QXA: The last thing we'll do in this lab is make sure you're comfortable with a few core elements of Python syntax. For each component, you're asked to describe the concept in your own words and write an example of the concept using Python syntax.
 
-136. For each component, you're asked to describe the concept in your own words and write an example of the concept using Python syntax.
-
-137. These examples do not need to be overly complex.
+QXB: These examples do not need to be overly complex.
   * Modifying example code provided in the lab is absolutely fine. 
   * Using things you wrote while working through the lab is absolutely fine. 
   * Consulting linked resources is fine (include a comment or note that mentions any resources you consulted beyond the lab procedure.
 
-Q5: For each concept, describe in your own words and provide an example using Python syntax. Use comments/narrative text to note each part of your answer.
+QXC: For each concept, describe in your own words and provide an example using Python syntax. Use comments/narrative text to note each part of your answer.
 - `print()` statement
 - string variable
 - integer variable
@@ -996,7 +708,7 @@ Q3: In your own words, what is iteration?
 Q4: In your own words, what is the difference between a `for` loop and a `while` loop?
 
 Q5: For each concept, describe in your own words and provide an example using Python syntax. Use comments/narrative text to note each part of your answer.
-- `print()` statement
+- `I/O` (input and ouput, using `print()` and `input()`)
 - string variable
 - integer variable
 - concatenation
