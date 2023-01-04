@@ -112,7 +112,7 @@ We can also show a variable's data type using the `type()` function.
 y = "Hello world!"
 
 # show type
-type(y)
+print(type(y))
 ```
 
 <blockquote>Q1: In your own words, explain the difference between the print(hello) command we just used and print(“hello”).</blockquote>
@@ -146,7 +146,7 @@ print(3)
 number = 3
 
 # show number variable type
-type(number)
+print(type(number))
 
 # print number variable
 print(number)
@@ -160,7 +160,7 @@ print(3.5)
 number = 3.5
 
 # show number variable type
-type(number)
+print(type(number))
 
 # print number variable
 print(number)
@@ -175,7 +175,7 @@ A string is a sequence of characters (letters, numbers, symbols, etc.) We can as
 s = "Hello world!"
 
 # show variable type
-type(s)
+print(type(s))
 
 # print variable
 print(s)
@@ -320,8 +320,8 @@ print("Ohio State" > "Notre Dame") # returns true
 
 We can also compare or relate multiple conditions using logical operators: `and`, `or`, `not`
 
-- "A logical operator is a symbol or word used to connect two or more expressions such that the value of the compound expression produced depends only on that of the original expressions and on the meaning of the operator. Common logical operators include AND, OR, and NOT." (Busbee and Braunschweig, "[Logical Operators](https://press.rebus.community/programmingfundamentals/chapter/logical-operators/)")                            
-
+- "A logical operator is a symbol or word used to connect two or more expressions such that the value of the compound expression produced depends only on that of the original expressions and on the meaning of the operator. Common logical operators include AND, OR, and NOT." (Busbee and Braunschweig, "[Logical Operators](https://press.rebus.community/programmingfundamentals/chapter/logical-operators/)")                           
+	  
 For example, `5 < 6 and 6 < 7` evaluates whether `5 < 6` and `6 < 7` are true. This statement would return `True`.
 
 Another example: `5 < 6 or 6 > 7` evaluates whether `5 < 6` or `6 > 7` is true. This statement would return `True`.
@@ -395,26 +395,26 @@ An example that uses a list of strings:
 fruits = ["apple", "banana", "blueberry", "cherry"]
 
 # check data type
-type(fruits)
+print(type(fruits))
 ```
 
 We can determine the number of elements in the list using the `len()` function.
 
 ```Python
-len(fruits)
+print(len(fruits))
 ```
 
 Remember Python starts at `0` and counts left-to-right. We can access specific values using their position.
 
 ```Python
 # access first value 
-fruits[0]
+print(fruits[0])
 
 # access second value
-fruits[1]
+print(fruits[1])
 
 # access third value
-fruits[2]
+print(fruits[2])
 ```
 
 Python lists also support negative indexing- we can use negative index values to count right-to-left. 
@@ -422,10 +422,10 @@ Python lists also support negative indexing- we can use negative index values to
 
 ```Python
 # access last value
-fruits[-1]
+print(fruits[-1])
 
 # access next to last value
-fruits[-2]
+print(fruits[-2])
 ```
 
 ## Dictionaries
@@ -449,37 +449,25 @@ english_to_french = {
 }
 
 # check data type
-type(english_to_french)
+print(type(english_to_french))
 ```
 
 We can use the index operator (`[]`) and key values to select specific values in the dictionary.
 
 ```Python
 # access value for one key
-english_to_french['one']
+print(english_to_french['one'])
 
 # access value for five key
-english_to_french['five']
+print(english_to_french['five'])
 
 # access value for asdf key
-english_to_french['asdf']
+print(english_to_french['asdf'])
 ```
 
 The last line will return a `KeyError` because `asdf` is not a key in this dictionary.
 
-We can use the `.keys()` and `.values()` methods to output all of the keys or values in a dictionary.
-
-```Python
-# output keys
-print(english_to_french.keys())
-
-# output values
-print(english_to_french.values())
-```
-
-
 For more background on arrays and data structures in Python: [Elements of Computing I "Data Structures in Python" lab](https://github.com/kwaldenphd/python-data-structures)
-
 
 # Conditional Statements & Control Flow
 
